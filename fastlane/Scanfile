@@ -1,0 +1,3 @@
+scheme "UnittestExample"
+devices ["iPhone 6s"]
+clean true
