@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E3F2D537788506E56867A5F /* Pods_NimbleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4860E77047FD932DA7CAD24 /* Pods_NimbleDemo.framework */; };
+		BDDCEE2E5DB9B71CF9EAA8CA /* Pods_NimbleDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E54C76A885BEA99E6D5256 /* Pods_NimbleDemoTests.framework */; };
+		FE39691D1FE75FA1005AEF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE39691C1FE75FA1005AEF37 /* AppDelegate.swift */; };
+		FE3969241FE75FA1005AEF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3969231FE75FA1005AEF37 /* Assets.xcassets */; };
+		FE3969271FE75FA1005AEF37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3969251FE75FA1005AEF37 /* LaunchScreen.storyboard */; };
+		FE3969321FE75FA1005AEF37 /* NimbleDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3969311FE75FA1005AEF37 /* NimbleDemoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE39692E1FE75FA1005AEF37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE3969111FE75FA1005AEF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE3969181FE75FA1005AEF37;
+			remoteInfo = NimbleDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10BC873598D464031F6B2787 /* Pods-NimbleDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemoUITests/Pods-NimbleDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		254947A14F505E63F42CE1B8 /* Pods-NimbleDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemoUITests/Pods-NimbleDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4E28AD2B799A08A9B9A23214 /* Pods-NimbleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemoTests/Pods-NimbleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		4EE400DC2FCDE581062B57C0 /* Pods-NimbleDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemo/Pods-NimbleDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		57C25DBE136E36FC1492B969 /* Pods-NimbleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemoTests/Pods-NimbleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		89E54C76A885BEA99E6D5256 /* Pods_NimbleDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A85D2E189DC5CFAE4FB00598 /* Pods_NimbleDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4860E77047FD932DA7CAD24 /* Pods_NimbleDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbleDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E6E9B734BF6E2FBF8BC630 /* Pods-NimbleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbleDemo/Pods-NimbleDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FE3969191FE75FA1005AEF37 /* NimbleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE39691C1FE75FA1005AEF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE3969231FE75FA1005AEF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE3969261FE75FA1005AEF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE3969281FE75FA1005AEF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE39692D1FE75FA1005AEF37 /* NimbleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3969311FE75FA1005AEF37 /* NimbleDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleDemoTests.swift; sourceTree = "<group>"; };
+		FE3969331FE75FA1005AEF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE3969161FE75FA1005AEF37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E3F2D537788506E56867A5F /* Pods_NimbleDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE39692A1FE75FA1005AEF37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDCEE2E5DB9B71CF9EAA8CA /* Pods_NimbleDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E05A3419E96E4AEEA8758DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4860E77047FD932DA7CAD24 /* Pods_NimbleDemo.framework */,
+				89E54C76A885BEA99E6D5256 /* Pods_NimbleDemoTests.framework */,
+				A85D2E189DC5CFAE4FB00598 /* Pods_NimbleDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F076BE12EC96436A03654FB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EE400DC2FCDE581062B57C0 /* Pods-NimbleDemo.debug.xcconfig */,
+				F3E6E9B734BF6E2FBF8BC630 /* Pods-NimbleDemo.release.xcconfig */,
+				57C25DBE136E36FC1492B969 /* Pods-NimbleDemoTests.debug.xcconfig */,
+				4E28AD2B799A08A9B9A23214 /* Pods-NimbleDemoTests.release.xcconfig */,
+				10BC873598D464031F6B2787 /* Pods-NimbleDemoUITests.debug.xcconfig */,
+				254947A14F505E63F42CE1B8 /* Pods-NimbleDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE3969101FE75FA1005AEF37 = {
+			isa = PBXGroup;
+			children = (
+				FE39691B1FE75FA1005AEF37 /* NimbleDemo */,
+				FE3969301FE75FA1005AEF37 /* NimbleDemoTests */,
+				FE39691A1FE75FA1005AEF37 /* Products */,
+				F076BE12EC96436A03654FB6 /* Pods */,
+				0E05A3419E96E4AEEA8758DC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE39691A1FE75FA1005AEF37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE3969191FE75FA1005AEF37 /* NimbleDemo.app */,
+				FE39692D1FE75FA1005AEF37 /* NimbleDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE39691B1FE75FA1005AEF37 /* NimbleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FE39691C1FE75FA1005AEF37 /* AppDelegate.swift */,
+				FE3969231FE75FA1005AEF37 /* Assets.xcassets */,
+				FE3969251FE75FA1005AEF37 /* LaunchScreen.storyboard */,
+				FE3969281FE75FA1005AEF37 /* Info.plist */,
+			);
+			path = NimbleDemo;
+			sourceTree = "<group>";
+		};
+		FE3969301FE75FA1005AEF37 /* NimbleDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE3969311FE75FA1005AEF37 /* NimbleDemoTests.swift */,
+				FE3969331FE75FA1005AEF37 /* Info.plist */,
+			);
+			path = NimbleDemoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE3969181FE75FA1005AEF37 /* NimbleDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE3969411FE75FA1005AEF37 /* Build configuration list for PBXNativeTarget "NimbleDemo" */;
+			buildPhases = (
+				4E937A3039BEC019B3040B0E /* [CP] Check Pods Manifest.lock */,
+				FE3969151FE75FA1005AEF37 /* Sources */,
+				FE3969161FE75FA1005AEF37 /* Frameworks */,
+				FE3969171FE75FA1005AEF37 /* Resources */,
+				8CC6284258EE4ED087DD0210 /* [CP] Embed Pods Frameworks */,
+				A3330C2A11A2C80EB9ABD1C1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NimbleDemo;
+			productName = NimbleDemo;
+			productReference = FE3969191FE75FA1005AEF37 /* NimbleDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE39692C1FE75FA1005AEF37 /* NimbleDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE3969441FE75FA1005AEF37 /* Build configuration list for PBXNativeTarget "NimbleDemoTests" */;
+			buildPhases = (
+				DBAF3067D7E77C13EB201211 /* [CP] Check Pods Manifest.lock */,
+				FE3969291FE75FA1005AEF37 /* Sources */,
+				FE39692A1FE75FA1005AEF37 /* Frameworks */,
+				FE39692B1FE75FA1005AEF37 /* Resources */,
+				462EB56D240911BF41368059 /* [CP] Embed Pods Frameworks */,
+				84B328FA1F2E92E9275F2404 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE39692F1FE75FA1005AEF37 /* PBXTargetDependency */,
+			);
+			name = NimbleDemoTests;
+			productName = NimbleDemoTests;
+			productReference = FE39692D1FE75FA1005AEF37 /* NimbleDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE3969111FE75FA1005AEF37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Lam Le V.";
+				TargetAttributes = {
+					FE3969181FE75FA1005AEF37 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					FE39692C1FE75FA1005AEF37 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE3969181FE75FA1005AEF37;
+					};
+				};
+			};
+			buildConfigurationList = FE3969141FE75FA1005AEF37 /* Build configuration list for PBXProject "NimbleDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE3969101FE75FA1005AEF37;
+			productRefGroup = FE39691A1FE75FA1005AEF37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE3969181FE75FA1005AEF37 /* NimbleDemo */,
+				FE39692C1FE75FA1005AEF37 /* NimbleDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE3969171FE75FA1005AEF37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3969271FE75FA1005AEF37 /* LaunchScreen.storyboard in Resources */,
+				FE3969241FE75FA1005AEF37 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE39692B1FE75FA1005AEF37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		462EB56D240911BF41368059 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NimbleDemoTests/Pods-NimbleDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleDemoTests/Pods-NimbleDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E937A3039BEC019B3040B0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NimbleDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B328FA1F2E92E9275F2404 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleDemoTests/Pods-NimbleDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CC6284258EE4ED087DD0210 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleDemo/Pods-NimbleDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3330C2A11A2C80EB9ABD1C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NimbleDemo/Pods-NimbleDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBAF3067D7E77C13EB201211 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NimbleDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE3969151FE75FA1005AEF37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE39691D1FE75FA1005AEF37 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE3969291FE75FA1005AEF37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE3969321FE75FA1005AEF37 /* NimbleDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE39692F1FE75FA1005AEF37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE3969181FE75FA1005AEF37 /* NimbleDemo */;
+			targetProxy = FE39692E1FE75FA1005AEF37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE3969251FE75FA1005AEF37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE3969261FE75FA1005AEF37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE39693F1FE75FA1005AEF37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE3969401FE75FA1005AEF37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE3969421FE75FA1005AEF37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE400DC2FCDE581062B57C0 /* Pods-NimbleDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimbleDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.lamle.NimbleDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE3969431FE75FA1005AEF37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E6E9B734BF6E2FBF8BC630 /* Pods-NimbleDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimbleDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.lamle.NimbleDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE3969451FE75FA1005AEF37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C25DBE136E36FC1492B969 /* Pods-NimbleDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimbleDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.lamle.NimbleDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NimbleDemo.app/NimbleDemo";
+			};
+			name = Debug;
+		};
+		FE3969461FE75FA1005AEF37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E28AD2B799A08A9B9A23214 /* Pods-NimbleDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NimbleDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.lamle.NimbleDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NimbleDemo.app/NimbleDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE3969141FE75FA1005AEF37 /* Build configuration list for PBXProject "NimbleDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE39693F1FE75FA1005AEF37 /* Debug */,
+				FE3969401FE75FA1005AEF37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE3969411FE75FA1005AEF37 /* Build configuration list for PBXNativeTarget "NimbleDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3969421FE75FA1005AEF37 /* Debug */,
+				FE3969431FE75FA1005AEF37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE3969441FE75FA1005AEF37 /* Build configuration list for PBXNativeTarget "NimbleDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE3969451FE75FA1005AEF37 /* Debug */,
+				FE3969461FE75FA1005AEF37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE3969111FE75FA1005AEF37 /* Project object */;
+}
