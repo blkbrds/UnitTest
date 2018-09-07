@@ -1,16 +1,54 @@
 PODS:
-  - SwiftLint (0.25.1)
+  - Alamofire (4.6.0)
+  - AlamofireNetworkActivityIndicator (2.2.0):
+    - Alamofire (~> 4.5)
+  - Crashlytics (3.10.7):
+    - Fabric (~> 1.7.11)
+  - Fabric (1.7.11)
+  - MVVM-Swift (1.1.0)
+  - ObjectMapper (3.1.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftDate (4.5.0)
+  - SwiftLint (0.25.0)
+  - SwiftUtils (4.0.1)
 
 DEPENDENCIES:
-  - SwiftLint (= 0.25.1)
+  - Alamofire (= 4.6.0)
+  - AlamofireNetworkActivityIndicator (= 2.2.0)
+  - Crashlytics
+  - Fabric
+  - MVVM-Swift (= 1.1.0)
+  - ObjectMapper (= 3.1.0)
+  - SVProgressHUD (= 2.2.5)
+  - SwiftDate (= 4.5.0)
+  - SwiftLint (= 0.25.0)
+  - SwiftUtils (= 4.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - Crashlytics
+    - Fabric
+    - MVVM-Swift
+    - ObjectMapper
+    - SVProgressHUD
+    - SwiftDate
     - SwiftLint
+    - SwiftUtils
 
 SPEC CHECKSUMS:
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
+  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
+  MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftDate: 17dd829c004a2d60432ef63ffcdb26ca2eb97a60
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: c5454a2e93f65c2e1beff7010afb0e179dd85023
+PODFILE CHECKSUM: aad1f09e272fe6705e2615902ba5637e880869e7
 
 COCOAPODS: 1.5.3
