@@ -31,6 +31,12 @@
 		0B5E43BC214225810087F605 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43A52142257D0087F605 /* ApiManager.swift */; };
 		0B5E43BD214225810087F605 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43A62142257D0087F605 /* ResponseSerializer.swift */; };
 		0B5E43BE214225810087F605 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43A72142257D0087F605 /* Api.swift */; };
+		0B5E43C1214278900087F605 /* API.Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43C0214278900087F605 /* API.Categories.swift */; };
+		0B5E43C4214278AB0087F605 /* API.Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43C2214278AA0087F605 /* API.Playlist.swift */; };
+		0B5E43C5214278AB0087F605 /* API.Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43C3214278AB0087F605 /* API.Video.swift */; };
+		0B5E43C721427A5A0087F605 /* CategoryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43C621427A5A0087F605 /* CategoryList.json */; };
+		0B5E43C921427AA50087F605 /* Playlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43C821427AA50087F605 /* Playlist.json */; };
+		0B5E43CD21427AEF0087F605 /* VideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43CC21427AEF0087F605 /* VideoList.json */; };
 		3634CB0A14BB9F71F9F5FC61 /* Pods_UnittestExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */; };
 		C3ECA3596397B1107E99D709 /* Pods_UnittestExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335C349B0F81DC3C5760FF76 /* Pods_UnittestExample.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +79,12 @@
 		0B5E43A52142257D0087F605 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0B5E43A62142257D0087F605 /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		0B5E43A72142257D0087F605 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		0B5E43C0214278900087F605 /* API.Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Categories.swift; sourceTree = "<group>"; };
+		0B5E43C2214278AA0087F605 /* API.Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.Playlist.swift; sourceTree = "<group>"; };
+		0B5E43C3214278AB0087F605 /* API.Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.Video.swift; sourceTree = "<group>"; };
+		0B5E43C621427A5A0087F605 /* CategoryList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryList.json; sourceTree = "<group>"; };
+		0B5E43C821427AA50087F605 /* Playlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Playlist.json; sourceTree = "<group>"; };
+		0B5E43CC21427AEF0087F605 /* VideoList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoList.json; sourceTree = "<group>"; };
 		124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		335C349B0F81DC3C5760FF76 /* Pods_UnittestExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB0DFA8DE07D81686E10213 /* Pods-UnittestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +136,9 @@
 		0B588106214110CF009E1C8C /* UnittestExample */ = {
 			isa = PBXGroup;
 			children = (
+				0B5E43C621427A5A0087F605 /* CategoryList.json */,
+				0B5E43C821427AA50087F605 /* Playlist.json */,
+				0B5E43CC21427AEF0087F605 /* VideoList.json */,
 				0B588107214110CF009E1C8C /* AppDelegate.swift */,
 				0B5E43902142257C0087F605 /* Define */,
 				0B5E43892142257C0087F605 /* Library */,
@@ -232,6 +247,9 @@
 		0B5E43A12142257D0087F605 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0B5E43C0214278900087F605 /* API.Categories.swift */,
+				0B5E43C2214278AA0087F605 /* API.Playlist.swift */,
+				0B5E43C3214278AB0087F605 /* API.Video.swift */,
 				0B5E43A22142257D0087F605 /* Core */,
 			);
 			path = API;
@@ -362,7 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5E437C214217C20087F605 /* LaunchScreen.storyboard in Resources */,
+				0B5E43C921427AA50087F605 /* Playlist.json in Resources */,
 				0B5E437B214217C20087F605 /* Assets.xcassets in Resources */,
+				0B5E43CD21427AEF0087F605 /* VideoList.json in Resources */,
+				0B5E43C721427A5A0087F605 /* CategoryList.json in Resources */,
 				0B5E437A214217C20087F605 /* Info.plist in Resources */,
 				0B5E437D214217C20087F605 /* Main.storyboard in Resources */,
 			);
@@ -465,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5E43C4214278AB0087F605 /* API.Playlist.swift in Sources */,
 				0B5E43B1214225810087F605 /* App.swift in Sources */,
 				0B588108214110CF009E1C8C /* AppDelegate.swift in Sources */,
 				0B5E43AE214225810087F605 /* DefaultsExt.swift in Sources */,
@@ -477,7 +499,9 @@
 				0B5E43BC214225810087F605 /* ApiManager.swift in Sources */,
 				0B5E43B6214225810087F605 /* ViewController.swift in Sources */,
 				0B5E43AF214225810087F605 /* String.swift in Sources */,
+				0B5E43C5214278AB0087F605 /* API.Video.swift in Sources */,
 				0B5E43B8214225810087F605 /* Button.swift in Sources */,
+				0B5E43C1214278900087F605 /* API.Categories.swift in Sources */,
 				0B5E43B7214225810087F605 /* TableCell.swift in Sources */,
 				0B5E43BD214225810087F605 /* ResponseSerializer.swift in Sources */,
 				0B5E43AC214225810087F605 /* UIViewControllerExt.swift in Sources */,
