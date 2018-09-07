@@ -368,7 +368,10 @@ final class NimbleDemoTests: XCTestCase {
 
     func testCollectionElements() {
         // allPass
-        expect([1, 2, 3, 4]).to(allPass { $0! < 5 })
+        expect([1, 2, 3, 4]).to(allPass {
+            guard let value = $0 else { return false }
+            return value < 5
+        })
         // Composing the expectation with another matcher:
         expect([1, 2, 3, 4]).to(allPass(beLessThan(5)))
     }
