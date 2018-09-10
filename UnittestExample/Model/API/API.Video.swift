@@ -11,7 +11,7 @@ import Alamofire
 
 extension Api.Video {
     struct VideoListParams {
-        let playlistID : String
+        let playlistID: String
 
         var JSON: [String: Any] {
             return ["part": "snippet",
@@ -23,7 +23,7 @@ extension Api.Video {
     @discardableResult
     static func getVideoList(param: VideoListParams, completion: @escaping Completion) -> Request? {
         let path = Api.Path.Video.path
-        return api.request(method: .get, urlString: path, parameters: param.JSON, completion: { (result) in
+        return api.request(method: .get, urlString: path, parameters: param.JSON, completion: { _ in
             DispatchQueue.main.async {
                 // TODO: - Pls mapper video object with format example `Video.json`
             }

@@ -21,7 +21,7 @@ extension Api.Categories {
     @discardableResult
     static func getCategoryList(completion: @escaping Completion) -> Request? {
         let path = Api.Path.Categories.path
-        return api.request(method: .get, urlString: path, parameters: CategoryListParams.JSON, completion: { (result) in
+        return api.request(method: .get, urlString: path, parameters: CategoryListParams.JSON, completion: { _ in
             DispatchQueue.main.async {
                 // TODO: - Pls mapper object and get `channelID` with format example `CategoryList.json`
             }

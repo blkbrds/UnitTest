@@ -41,8 +41,6 @@ extension Api.Path {
     }
 }
 
-
-
 protocol URLStringConvertible {
     var urlString: String { get }
 }

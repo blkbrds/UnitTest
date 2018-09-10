@@ -11,7 +11,7 @@ import Alamofire
 
 extension Api.Playlist {
     struct PlaylistParams {
-        let channelID : String
+        let channelID: String
 
         var JSON: [String: Any] {
             return ["part": "snippet",
@@ -23,7 +23,7 @@ extension Api.Playlist {
     @discardableResult
     static func getPlaylist(param: PlaylistParams, completion: @escaping Completion) -> Request? {
         let path = Api.Path.Playlist.path
-        return api.request(method: .get, urlString: path, parameters: param.JSON, completion: { (result) in
+        return api.request(method: .get, urlString: path, parameters: param.JSON, completion: { _ in
             DispatchQueue.main.async {
                 // TODO: - Pls mapper object and get `playlistID` = Items[0].id with format example `Playlist.json`
             }
