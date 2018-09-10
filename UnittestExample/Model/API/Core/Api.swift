@@ -8,15 +8,36 @@
 
 import Foundation
 
+let regionCode = "VN"
+
 final class Api {
     struct Path {
-        #if DEBUG
-            static let baseURL = "https://dev-asiantech.vn"
-        #elseif STG
-            static let baseURL = "https://stg-asiantech.vn"
-        #else
-            static let baseURL = "https://pro-asiantech.vn"
-        #endif
+        static let baseURL = "https://www.googleapis.com/youtube" / v3
+        static let v3 = "v3"
+    }
+
+    struct Categories { }
+
+    struct Playlist { }
+
+    struct Video { }
+}
+
+extension Api.Path {
+
+    /// Get list categories
+    struct Categories {
+        static var path: String { return Api.Path.baseURL / "videoCategories" }
+    }
+
+    /// Get playlist from idChanel
+    struct Playlist {
+        static var path: String { return Api.Path.baseURL / "playlists" }
+    }
+
+    /// Get list video from playlistID
+    struct Video {
+        static var path: String { return Api.Path.baseURL / "playlistItems" }
     }
 }
 

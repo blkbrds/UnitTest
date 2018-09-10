@@ -19,3 +19,9 @@ struct Facebook {
     static var apiPublicKey: String { return "publicKey" }
     static var apiSecretKey: String { return "secretKey" }
 }
+
+extension App {
+    struct Key {
+        static let youtubeAPIKey = "AIzaSyCqclhOWo4H8FMN-Oqj8TVaMmMpaeJoRTc"
+    }
+}
