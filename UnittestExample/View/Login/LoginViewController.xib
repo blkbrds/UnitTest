@@ -14,10 +14,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UnittestExample" customModuleProvider="target">
             <connections>
+                <outlet property="alertLabel" destination="cUd-LN-q92" id="nRo-EA-RvZ"/>
                 <outlet property="loginButton" destination="mnD-Jm-aeQ" id="oX6-2a-8Ss"/>
-                <outlet property="passwordAlertLabel" destination="RAf-ee-iR4" id="GPO-cr-MdC"/>
                 <outlet property="passwordTextField" destination="2V1-9n-taC" id="cZ3-1a-8a1"/>
-                <outlet property="usernameAlertLabel" destination="cUd-LN-q92" id="nRo-EA-RvZ"/>
                 <outlet property="usernameTextField" destination="ulE-Lt-PHl" id="8kS-gA-ggu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GaT-hg-Unv">
-                    <rect key="frame" x="15" y="64.5" width="345" height="317"/>
+                    <rect key="frame" x="15" y="76.5" width="345" height="293.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unittest" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-ea-XFz">
                             <rect key="frame" x="72.5" y="0.0" width="200" height="150"/>
@@ -55,14 +54,8 @@
                                 <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="R0v-Vz-x9i"/>
                             </connections>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAf-ee-iR4">
-                            <rect key="frame" x="0.0" y="243.5" width="345" height="13.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2V1-9n-taC">
-                            <rect key="frame" x="0.0" y="267" width="345" height="50"/>
+                            <rect key="frame" x="0.0" y="243.5" width="345" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cr1-hM-1b3"/>
                             </constraints>
@@ -77,14 +70,13 @@
                     <constraints>
                         <constraint firstItem="cUd-LN-q92" firstAttribute="leading" secondItem="GaT-hg-Unv" secondAttribute="leading" id="CiN-FL-tia"/>
                         <constraint firstItem="2V1-9n-taC" firstAttribute="leading" secondItem="GaT-hg-Unv" secondAttribute="leading" id="Dc5-TI-gpo"/>
-                        <constraint firstItem="RAf-ee-iR4" firstAttribute="leading" secondItem="GaT-hg-Unv" secondAttribute="leading" id="Lsq-z2-Hj6"/>
                         <constraint firstAttribute="trailing" secondItem="2V1-9n-taC" secondAttribute="trailing" id="MkU-W6-fpf"/>
                         <constraint firstAttribute="trailing" secondItem="ulE-Lt-PHl" secondAttribute="trailing" id="cCT-PR-DH0"/>
                         <constraint firstItem="ulE-Lt-PHl" firstAttribute="leading" secondItem="GaT-hg-Unv" secondAttribute="leading" id="dbE-zd-RY4"/>
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-Jm-aeQ">
-                    <rect key="frame" x="15" y="401.5" width="345" height="50"/>
+                    <rect key="frame" x="15" y="390" width="345" height="50"/>
                     <color key="backgroundColor" red="0.5725490196078431" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="byQ-1u-YQ0"/>

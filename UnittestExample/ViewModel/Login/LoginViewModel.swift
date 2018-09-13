@@ -12,18 +12,17 @@ import MVVM
 final class LoginViewModel: ViewModel {
 
     // MARK: - Properties
-    var validateUserWhenValueChanged: (() -> Void)?
-    var validatePasswordWhenValueChanged: (() -> Void)?
+    var validateWhenValueChanged: (() -> Void)?
 
     var username = "" {
         didSet {
-            validateUserWhenValueChanged?()
+            validateWhenValueChanged?()
         }
     }
 
     var password = "" {
         didSet {
-            validatePasswordWhenValueChanged?()
+            validateWhenValueChanged?()
         }
     }
 
@@ -60,7 +59,7 @@ final class LoginViewModel: ViewModel {
 
     // MARK: - Public
     func validate() throws {
-        try validatePassword()
         try validateUsername()
+        try validatePassword()
     }
 }
