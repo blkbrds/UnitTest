@@ -38,6 +38,10 @@
 		0B5E43C921427AA50087F605 /* Playlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43C821427AA50087F605 /* Playlist.json */; };
 		0B5E43CD21427AEF0087F605 /* VideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43CC21427AEF0087F605 /* VideoList.json */; };
 		3634CB0A14BB9F71F9F5FC61 /* Pods_UnittestExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */; };
+		9BF94A80214A130B004CC6A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */; };
+		9BF94A81214A130B004CC6A1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */; };
+		9BF94A88214A464B004CC6A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */; };
+		9BF94A8A214A4A60004CC6A1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A89214A4A60004CC6A1 /* Errors.swift */; };
 		C3ECA3596397B1107E99D709 /* Pods_UnittestExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335C349B0F81DC3C5760FF76 /* Pods_UnittestExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +92,10 @@
 		124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		335C349B0F81DC3C5760FF76 /* Pods_UnittestExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB0DFA8DE07D81686E10213 /* Pods-UnittestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.debug.xcconfig"; sourceTree = "<group>"; };
+		9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9BF94A89214A4A60004CC6A1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		9E08BF720C3BC2D32DEB7DEC /* Pods-UnittestExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0312F1664CE28F4F9915209 /* Pods-UnittestExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C805EE3002BB89C17996D381 /* Pods-UnittestExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +154,7 @@
 				0B5E4374214217C20087F605 /* Resources */,
 				0B5E4372214217C20087F605 /* Supports */,
 				0B5E43952142257C0087F605 /* View */,
-				0B5E43A8214225800087F605 /* ViewModel */,
+				9BF94A85214A464B004CC6A1 /* ViewModel */,
 			);
 			path = UnittestExample;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 				0B5E438D2142257C0087F605 /* UIViewControllerExt.swift */,
 				0B5E438E2142257C0087F605 /* MapperExt.swift */,
 				0B5E438F2142257C0087F605 /* DefaultsExt.swift */,
+				9BF94A89214A4A60004CC6A1 /* Errors.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				0B5E43992142257C0087F605 /* Base */,
+				9BF94A7D214A12F6004CC6A1 /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,13 +277,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		0B5E43A8214225800087F605 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		2304F8F198AF70A56D88757D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +295,31 @@
 				9E08BF720C3BC2D32DEB7DEC /* Pods-UnittestExampleTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9BF94A7D214A12F6004CC6A1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */,
+				9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9BF94A85214A464B004CC6A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9BF94A86214A464B004CC6A1 /* Login */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BF94A86214A464B004CC6A1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF94A81214A130B004CC6A1 /* LoginViewController.xib in Resources */,
 				0B5E437C214217C20087F605 /* LaunchScreen.storyboard in Resources */,
 				0B5E43C921427AA50087F605 /* Playlist.json in Resources */,
 				0B5E437B214217C20087F605 /* Assets.xcassets in Resources */,
@@ -489,6 +518,7 @@
 				0B5E43C4214278AB0087F605 /* API.Playlist.swift in Sources */,
 				0B5E43B1214225810087F605 /* App.swift in Sources */,
 				0B588108214110CF009E1C8C /* AppDelegate.swift in Sources */,
+				9BF94A80214A130B004CC6A1 /* LoginViewController.swift in Sources */,
 				0B5E43AE214225810087F605 /* DefaultsExt.swift in Sources */,
 				0B5E43B2214225810087F605 /* Color.swift in Sources */,
 				0B5E43BA214225810087F605 /* RequestSerializer.swift in Sources */,
@@ -501,10 +531,12 @@
 				0B5E43AF214225810087F605 /* String.swift in Sources */,
 				0B5E43C5214278AB0087F605 /* API.Video.swift in Sources */,
 				0B5E43B8214225810087F605 /* Button.swift in Sources */,
+				9BF94A8A214A4A60004CC6A1 /* Errors.swift in Sources */,
 				0B5E43C1214278900087F605 /* API.Categories.swift in Sources */,
 				0B5E43B7214225810087F605 /* TableCell.swift in Sources */,
 				0B5E43BD214225810087F605 /* ResponseSerializer.swift in Sources */,
 				0B5E43AC214225810087F605 /* UIViewControllerExt.swift in Sources */,
+				9BF94A88214A464B004CC6A1 /* LoginViewModel.swift in Sources */,
 				0B5E43AA214225810087F605 /* InputViewExt.swift in Sources */,
 				0B5E43BE214225810087F605 /* Api.swift in Sources */,
 				0B5E43B5214225810087F605 /* CollectionCell.swift in Sources */,
