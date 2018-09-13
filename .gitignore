@@ -27,7 +27,6 @@ xcuserdata/
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
-*.xcworkspace
 
 # Swift Package Manager
 .build/
