@@ -37,6 +37,7 @@
 		0B5E43C721427A5A0087F605 /* CategoryList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43C621427A5A0087F605 /* CategoryList.json */; };
 		0B5E43C921427AA50087F605 /* Playlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43C821427AA50087F605 /* Playlist.json */; };
 		0B5E43CD21427AEF0087F605 /* VideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43CC21427AEF0087F605 /* VideoList.json */; };
+		257759AF214B524700123248 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257759AE214B524700123248 /* LoginViewModelTests.swift */; };
 		3634CB0A14BB9F71F9F5FC61 /* Pods_UnittestExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */; };
 		9BF94A80214A130B004CC6A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */; };
 		9BF94A81214A130B004CC6A1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */; };
@@ -90,6 +91,7 @@
 		0B5E43C821427AA50087F605 /* Playlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Playlist.json; sourceTree = "<group>"; };
 		0B5E43CC21427AEF0087F605 /* VideoList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoList.json; sourceTree = "<group>"; };
 		124A1427B5CBF772D87597D8 /* Pods_UnittestExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		257759AE214B524700123248 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		335C349B0F81DC3C5760FF76 /* Pods_UnittestExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB0DFA8DE07D81686E10213 /* Pods-UnittestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +164,9 @@
 		0B58811B214110D0009E1C8C /* UnittestExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				0B58811C214110D0009E1C8C /* UnittestExampleTests.swift */,
 				0B58811E214110D0009E1C8C /* Info.plist */,
+				0B58811C214110D0009E1C8C /* UnittestExampleTests.swift */,
+				257759AC214B522700123248 /* ViewModel */,
 			);
 			path = UnittestExampleTests;
 			sourceTree = "<group>";
@@ -286,6 +289,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		257759AC214B522700123248 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				257759AD214B523300123248 /* Login */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		257759AD214B523300123248 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				257759AE214B524700123248 /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4C2C2AE1C112BDF715C20D6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +372,7 @@
 				0B588114214110D0009E1C8C /* Sources */,
 				0B588115214110D0009E1C8C /* Frameworks */,
 				0B588116214110D0009E1C8C /* Resources */,
+				BEEFB98A0520720482F3D9B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -490,6 +510,40 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BEEFB98A0520720482F3D9B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F6C82A604FCC9A85C0E30C61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257759AF214B524700123248 /* LoginViewModelTests.swift in Sources */,
 				0B58811D214110D0009E1C8C /* UnittestExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
