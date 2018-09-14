@@ -1,6 +1,6 @@
 //
-//  String.swift
-//  MyApp
+//  StringExt.swift
+//  UnittestExample
 //
 //  Created by iOSTeam on 2/21/18.
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
@@ -29,5 +29,16 @@ extension String {
             guard let data = Data(base64Encoded: self) else { return nil }
             return String(data: data, encoding: .utf8)
         }
+    }
+
+    // MARK: Validation
+    public struct Regex {
+        public static let PasswordRegex = "[a-zA-Z0-9_]+"
+        public static let EmailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    }
+
+    public func validate(_ regex: String) -> Bool {
+        let pre = NSPredicate(format: "SELF MATCHES %@", regex)
+        return pre.evaluate(with: self)
     }
 }
