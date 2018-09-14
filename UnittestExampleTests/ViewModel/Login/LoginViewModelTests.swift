@@ -107,6 +107,15 @@ final class LoginViewModelTests: QuickSpec {
                 }
             }
 
+            context("When username is invalid, password is valid") {
+
+                it("`validate` shouldn't throw error") {
+                    viewModel.username = "tung.nguyen@gmail.vn"
+                    viewModel.password = "123456789a"
+                    expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
+                }
+            }
+
             context("When username & password are valid") {
 
                 it("`validate` shouldn't throw error") {
