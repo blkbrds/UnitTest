@@ -100,7 +100,7 @@ final class LoginViewModelTests: QuickSpec {
 
             context("When username is valid, password is invalid") {
 
-                it("`validate` shouldn't throw error") {
+                it("`validate` should throw password's length error") {
                     viewModel.username = "tung.nguyen@asiantech.vn"
                     viewModel.password = "1234"
                     expect { try viewModel.validate() }.to(throwError(PasswordError.invalid(reason: .length)))
@@ -109,7 +109,7 @@ final class LoginViewModelTests: QuickSpec {
 
             context("When username is invalid, password is valid") {
 
-                it("`validate` shouldn't throw error") {
+                it("`validate` should throw  username suffix error") {
                     viewModel.username = "tung.nguyen@gmail.vn"
                     viewModel.password = "123456789a"
                     expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
