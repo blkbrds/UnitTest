@@ -47,7 +47,7 @@ final class MoviesViewControllerTest: QuickSpec {
                 }
 
                 it("Cell should return UITableviewCell() when index out of bound") {
-                    let indexPath = IndexPath(row: 1000, section: 0)
+                    let indexPath = IndexPath(row: 1_000, section: 0)
                     let cell = viewController.tableView(viewController.tableView, cellForRowAt: indexPath)
                     expect(cell).to(beAnInstanceOf(UITableViewCell.self))
                 }
@@ -55,4 +55,3 @@ final class MoviesViewControllerTest: QuickSpec {
         }
     }
 }
-

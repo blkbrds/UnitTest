@@ -126,8 +126,6 @@ final class NimbleDemoTests: XCTestCase {
         expect(ocean).toEventually(contain("dolphins", "whales"))
         expect(ocean).toEventually(contain("dolphins", "whales"), timeout: 3)
 
-
-
         waitUntil { done in
             expect(true).to(beTrue())
             done()
@@ -141,8 +139,6 @@ final class NimbleDemoTests: XCTestCase {
 
     // Built-in Matcher Functions
     func testTypeChecking() {
-
-
         // The following tests pass
         expect(1).to(beAnInstanceOf(Int.self))
         expect("turtle").to(beAnInstanceOf(String.self))
@@ -156,7 +152,6 @@ final class NimbleDemoTests: XCTestCase {
         expect(structObject).to(beAnInstanceOf(SomeProtocol.self))
         expect(structObject).to(beAnInstanceOf(SomeStructConformingToProtocol.self))
         expect(structObject).toNot(beAnInstanceOf(SomeClassConformingToProtocol.self))
-
 
         class A {}
         class B: A {}
@@ -175,7 +170,6 @@ final class NimbleDemoTests: XCTestCase {
         expect(structObject1).to(beAKindOf(SomeProtocol.self))
         expect(structObject1).to(beAKindOf(SomeStructConformingToProtocol.self))
         expect(structObject1).to(beAKindOf(SomeClassConformingToProtocol.self))
-
 
         // Unlike the 'beKindOf' matcher, the 'beAnInstanceOf' matcher only
         // passes if the object is the EXACT type requested. The following
