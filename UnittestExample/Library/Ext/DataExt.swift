@@ -7,10 +7,6 @@
 //
 
 import Foundation
-import Nimble
-import Quick
-
-@testable import UnittestExample
 
 extension Data {
 
