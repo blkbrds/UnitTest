@@ -53,4 +53,3 @@ extension MoviesViewController: UITableViewDataSource {
         return viewModel.numberOfItems(inSection: section)
     }
 }
-

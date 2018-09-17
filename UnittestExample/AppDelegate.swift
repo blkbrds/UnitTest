@@ -14,10 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
-        window?.rootViewController = LoginViewController()
+        configWindow()
         return true
     }
 
@@ -26,4 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Step 2: Get playlist with channelID
 
     // Step 3: Get video list with playlistID
+}
+
+extension AppDelegate {
+
+    private func configWindow() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+        let isDidLogin = Session.shared.isLogin
+        if isDidLogin {
+            let vc = CategoriesViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        } else {
+            let vc = LoginViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        }
+    }
 }

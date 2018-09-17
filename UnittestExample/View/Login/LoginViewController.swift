@@ -69,7 +69,9 @@ final class LoginViewController: UIViewController {
 
     @IBAction func loginButtonTouchInside(_ sender: UIButton) {
         // TODO: - Change Root here
-        print("change root")
+        Session.shared.isLogin = true
+        let vc = CategoriesViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

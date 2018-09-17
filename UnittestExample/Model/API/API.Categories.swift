@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 extension Api.Categories {
     struct CategoryListParams {
@@ -21,9 +22,19 @@ extension Api.Categories {
     @discardableResult
     static func getCategoryList(completion: @escaping Completion) -> Request? {
         let path = Api.Path.Categories.path
-        return api.request(method: .get, urlString: path, parameters: CategoryListParams.JSON, completion: { _ in
+        return api.request(method: .get, urlString: path, parameters: CategoryListParams.JSON, completion: { result in
             DispatchQueue.main.async {
                 // TODO: - Pls mapper object and get `channelID` with format example `CategoryList.json`
+                switch result {
+                case .success(let value):
+                    guard let json = value as? JSObject,
+                        let categories = Mapper<Categories>().map(JSON: json) else {
+                            completion(.failure(Api.Error.json))
+                            return
+                    }
+                    completion(.success(categories))
+                case .failure(let error): completion(.failure(error))
+                }
             }
         })
     }
