@@ -12,7 +12,8 @@ import SwiftUtils
 
 final class CategoriesViewModel: ViewModel {
 
-    private(set) var categories: Categories?
+    /// Public for test
+    var categories: Categories?
 
     var items: [Items] {
         guard let items = categories?.items else { return [] }
@@ -31,10 +32,11 @@ final class CategoriesViewModel: ViewModel {
     ///
     /// - Parameter indexPath: indexPath of each item in tableView
     /// - Returns: CategoriesCellViewModel at indexPath parameter
-    func viewModelForItem(at indexPath: IndexPath) -> CategoriesCellViewModel {
-        guard let item = categories?.items[indexPath.row] else {
-            return CategoriesCellViewModel()
+    func viewModelForItem(at indexPath: IndexPath) throws -> CategoriesCellViewModel {
+        guard indexPath.row < items.count else {
+            throw Errors.indexOutOfBound
         }
+        let item = items[indexPath.row]
         let viewModel = CategoriesCellViewModel(item: item)
         return viewModel
     }

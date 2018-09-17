@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 
 extension Api.Categories {
+
     struct CategoryListParams {
         static var JSON: [String: Any] {
             return ["part": "snippet",
@@ -33,7 +34,8 @@ extension Api.Categories {
                             return
                     }
                     completion(.success(categories))
-                case .failure(let error): completion(.failure(error))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
             }
         })

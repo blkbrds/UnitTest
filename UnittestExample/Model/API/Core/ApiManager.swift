@@ -14,6 +14,11 @@ typealias JSArray = [JSObject]
 
 typealias Completion = (Result<Any>) -> Void
 
+enum APIResult {
+    case success
+    case failure(Error)
+}
+
 let api = ApiManager()
 
 final class ApiManager {
