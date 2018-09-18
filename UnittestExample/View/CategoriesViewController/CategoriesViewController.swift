@@ -67,7 +67,8 @@ extension CategoriesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CategoriesCell.self)
-        cell.viewModel = viewModel.viewModelForItem(at: indexPath)
+        guard let viewModel = try? viewModel.viewModelForItem(at: indexPath) else { return UITableViewCell() }
+        cell.viewModel = viewModel
         return cell
     }
 }

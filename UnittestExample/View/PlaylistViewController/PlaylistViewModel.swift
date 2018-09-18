@@ -11,8 +11,9 @@ import MVVM
 
 final class PlaylistViewModel: ViewModel {
 
-    private var chanelID: String
-    private(set) var categories: Categories?
+    /// Public for test
+    var chanelID: String
+    var categories: Categories?
 
     /// Init with parameter is chanel id
     ///
@@ -38,10 +39,11 @@ final class PlaylistViewModel: ViewModel {
     ///
     /// - Parameter indexPath: indexPath of each item in tableView
     /// - Returns: PlaylistCellViewModel at indexPath parameter
-    func viewModelForItem(at indexPath: IndexPath) -> PlaylistCellViewModel {
-        guard let item = categories?.items[indexPath.row] else {
-            return PlaylistCellViewModel()
+    func viewModelForItem(at indexPath: IndexPath) throws -> PlaylistCellViewModel {
+        guard indexPath.row < items.count else {
+            throw Errors.indexOutOfBound
         }
+        let item = items[indexPath.row]
         let viewModel = PlaylistCellViewModel(item: item)
         return viewModel
     }
