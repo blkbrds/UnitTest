@@ -12,19 +12,25 @@ import Alamofire
 
 final class SearchViewModel: ViewModel {
     private let disposeBag = DisposeBag()
-    private var items: [Items] = []
+    private var scheduler: SchedulerType
     private var categories = Categories() {
         didSet {
-            items = categories.items
+            let viewModels = categories.items.map { (item) -> PlaylistCellViewModel in
+                return PlaylistCellViewModel(item: item)
+            }
+            cellViewModels.onNext(viewModels)
         }
     }
 
+    let cellViewModels: PublishSubject<[PlaylistCellViewModel]> = PublishSubject<[PlaylistCellViewModel]>()
     let searchCompletion: PublishSubject = PublishSubject<Result<Any>>()
 
-    init() { }
+    init(scheduler: SchedulerType = MainScheduler.instance) {
+        self.scheduler = scheduler
+    }
 
     func configSearchBar(searchBar: Observable<String>) {
-        searchBar.debounce(0.3, scheduler: MainScheduler.instance)
+        searchBar.debounce(0.3, scheduler: scheduler)
             .filter({ !$0.isEmpty })
             .flatMapLatest({ (key) -> Observable<Result<Categories>> in
                 return Api.Search.search(keySearch: key)
@@ -40,28 +46,5 @@ final class SearchViewModel: ViewModel {
                 }
             })
         .disposed(by: disposeBag)
-    }
-}
-
-extension SearchViewModel {
-    /// Number of item for user display in table view
-    ///
-    /// - Parameter section: section of table view
-    /// - Returns: number of items display in table view
-    func numberOfItems(inSection section: Int) -> Int {
-        return items.count
-    }
-
-    /// Make view model for PlaylistCellViewModel
-    ///
-    /// - Parameter indexPath: indexPath of each item in tableView
-    /// - Returns: PlaylistCellViewModel at indexPath parameter
-    func viewModelForItem(at indexPath: IndexPath) throws -> PlaylistCellViewModel {
-        guard indexPath.row < items.count else {
-            throw Errors.indexOutOfBound
-        }
-        let item = items[indexPath.row]
-        let viewModel = PlaylistCellViewModel(item: item)
-        return viewModel
     }
 }

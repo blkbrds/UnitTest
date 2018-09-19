@@ -22,16 +22,22 @@ final class SearchViewController: ViewController {
         super.viewDidLoad()
         title = "Search"
         configSearchBar()
-        configTableView()
         viewModel.configSearchBar(searchBar: searchBar.rx.text.orEmpty.asObservable())
+        configTableView()
         handleResult()
     }
 
     // MARK: Private func
     private func configTableView() {
         tableView.register(PlaylistCell.self)
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.rowHeight = 112
+
+        viewModel.cellViewModels.asObservable()
+            .bind(to: tableView.rx
+                .items(cellIdentifier: "PlaylistCell",
+                       cellType: PlaylistCell.self)) { _, cellViewModel, cell in
+                        cell.viewModel = cellViewModel
+            }.disposed(by: disposeBag)
     }
 
     private func handleResult() {
@@ -39,13 +45,7 @@ final class SearchViewController: ViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] result in
                 guard let this = self else { return }
-                switch result {
-                case .success:
-                    this.tableView.reloadData()
-                    if this.tableView.numberOfRows(inSection: 0) != 0 {
-                        this.tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: true)
-                    }
-                case .failure(let error):
+                if case .failure(let error) = result {
                     this.alert(error: error)
                 }
             })
@@ -67,22 +67,5 @@ final class SearchViewController: ViewController {
                 self?.searchBar.resignFirstResponder()
             })
             .disposed(by: disposeBag)
-    }
-}
-
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 112
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItems(inSection: section)
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(PlaylistCell.self)
-        guard let viewModel = try? viewModel.viewModelForItem(at: indexPath) else { return UITableViewCell() }
-        cell.viewModel = viewModel
-        return cell
     }
 }

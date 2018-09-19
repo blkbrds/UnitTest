@@ -11,7 +11,11 @@ import RxSwift
 import Alamofire
 import ObjectMapper
 
-extension Api.Search {
+protocol SearchProtocol {
+    static func search(keySearch: String) -> Observable<Result<Categories>>
+}
+
+extension Api.Search: SearchProtocol {
     struct SearchParams {
         var key: String = ""
 
