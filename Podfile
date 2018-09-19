@@ -36,6 +36,10 @@ target 'UnittestExample' do
     pod 'Fabric'
     pod 'Crashlytics'
 
+    # RxSwift and RxCocoa
+    pod 'RxSwift', '4.2.0'
+    pod 'RxCocoa', '4.2.0'
+
     target 'UnittestExampleTests' do
         inherit! :search_paths
         # Pods for testing
