@@ -12,7 +12,7 @@ import Nimble
 
 @testable import UnittestExample
 
-class LoginViewModelTests: QuickSpec {
+final class LoginViewModelTests: QuickSpec {
 
     override func spec() {
 
