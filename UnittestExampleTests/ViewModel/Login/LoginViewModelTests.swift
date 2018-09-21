@@ -23,7 +23,7 @@ final class LoginViewModelTests: QuickSpec {
                 viewModel = LoginViewModel()
             }
 
-            context("Test validate username") {
+            context("When user name invalid") {
 
                 it ("Username should be not empty") {
                     expect { try viewModel.validateUsername() }.to(throwError(UsernameError.empty))
@@ -40,7 +40,7 @@ final class LoginViewModelTests: QuickSpec {
                 }
             }
 
-            context("Test validate password") {
+            context("When password invalid") {
                 it ("Password should be not empty") {
                     expect { try viewModel.validatePassword() }.to(throwError(PasswordError.empty))
                 }
@@ -61,13 +61,7 @@ final class LoginViewModelTests: QuickSpec {
                 }
             }
 
-            context("Validate function should be error") {
-                it("Password and Username empty") {
-                    expect { try viewModel.validate() }.to(throwError())
-                }
-            }
-
-            context("Validate function should be success") {
+            context("When user name and pasword correct") {
                 it("Password and Username correct") {
                     viewModel.username = "khoanguyen@asiantech.vn"
                     viewModel.password = "khoanguyen1192"
