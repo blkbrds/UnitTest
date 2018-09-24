@@ -73,6 +73,8 @@
 		9BF94A88214A464B004CC6A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */; };
 		9BF94A8A214A4A60004CC6A1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A89214A4A60004CC6A1 /* Errors.swift */; };
 		AB4704C1215207980072D340 /* IndexPathExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C0215207980072D340 /* IndexPathExt.swift */; };
+		AB4704C421534B820072D340 /* SearchApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C321534B820072D340 /* SearchApiMock.swift */; };
+		AB4704C721534CC80072D340 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C621534CC80072D340 /* SearchViewModelTests.swift */; };
 		ABF271552150A40A00C41AEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF271532150A40A00C41AEA /* SearchViewController.swift */; };
 		ABF271562150A40A00C41AEA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF271542150A40A00C41AEA /* SearchViewController.xib */; };
 		ABF271582150A44500C41AEA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF271572150A44500C41AEA /* SearchViewModel.swift */; };
@@ -164,6 +166,8 @@
 		9E08BF720C3BC2D32DEB7DEC /* Pods-UnittestExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0312F1664CE28F4F9915209 /* Pods-UnittestExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB4704C0215207980072D340 /* IndexPathExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathExt.swift; sourceTree = "<group>"; };
+		AB4704C321534B820072D340 /* SearchApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiMock.swift; sourceTree = "<group>"; };
+		AB4704C621534CC80072D340 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		ABF271532150A40A00C41AEA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ABF271542150A40A00C41AEA /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ABF271572150A44500C41AEA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -233,11 +237,12 @@
 		0B58811B214110D0009E1C8C /* UnittestExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				0B58811E214110D0009E1C8C /* Info.plist */,
+				0B58811C214110D0009E1C8C /* UnittestExampleTests.swift */,
 				4F10957B214F819E006CDCD6 /* Api */,
 				4F109570214F552E006CDCD6 /* Define */,
 				4F109569214EB777006CDCD6 /* Helper */,
-				0B58811E214110D0009E1C8C /* Info.plist */,
-				0B58811C214110D0009E1C8C /* UnittestExampleTests.swift */,
+				AB4704C221534B640072D340 /* Mock */,
 				257759AC214B522700123248 /* ViewModel */,
 			);
 			path = UnittestExampleTests;
@@ -376,6 +381,7 @@
 		257759AC214B522700123248 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AB4704C521534CB60072D340 /* Search */,
 				4F10957A214F818B006CDCD6 /* Playlist */,
 				4F109564214E6E90006CDCD6 /* Categories */,
 				257759AD214B523300123248 /* Login */,
@@ -527,6 +533,22 @@
 				9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		AB4704C221534B640072D340 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AB4704C321534B820072D340 /* SearchApiMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AB4704C521534CB60072D340 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AB4704C621534CC80072D340 /* SearchViewModelTests.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		ABF271522150A3ED00C41AEA /* Search */ = {
@@ -825,9 +847,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F10957F214F8B59006CDCD6 /* PlaylistViewModelTests.swift in Sources */,
+				AB4704C721534CC80072D340 /* SearchViewModelTests.swift in Sources */,
 				4F109566214E6EA8006CDCD6 /* CategoriesViewModelTests.swift in Sources */,
 				4F109572214F554D006CDCD6 /* DummyTests.swift in Sources */,
 				4F109587214F96A9006CDCD6 /* ApiPlaylistTests.swift in Sources */,
+				AB4704C421534B820072D340 /* SearchApiMock.swift in Sources */,
 				4F109579214F6752006CDCD6 /* MatchersExt.swift in Sources */,
 				257759AF214B524700123248 /* LoginViewModelTests.swift in Sources */,
 				0B58811D214110D0009E1C8C /* UnittestExampleTests.swift in Sources */,

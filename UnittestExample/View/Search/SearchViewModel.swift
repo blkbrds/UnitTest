@@ -11,8 +11,8 @@ import RxSwift
 import Alamofire
 
 final class SearchViewModel: ViewModel {
-    private let disposeBag = DisposeBag()
     private var scheduler: SchedulerType
+    private var searchApiProtocol: SearchProtocol.Type
     private var categories = Categories() {
         didSet {
             let viewModels = categories.items.map { (item) -> PlaylistCellViewModel in
@@ -22,18 +22,21 @@ final class SearchViewModel: ViewModel {
         }
     }
 
+    let disposeBag = DisposeBag()
     let cellViewModels: PublishSubject<[PlaylistCellViewModel]> = PublishSubject<[PlaylistCellViewModel]>()
     let searchCompletion: PublishSubject = PublishSubject<Result<Any>>()
 
-    init(scheduler: SchedulerType = MainScheduler.instance) {
+    init(searchApiProtocol: SearchProtocol.Type = Api.Search.self,
+         scheduler: SchedulerType = MainScheduler.instance) {
         self.scheduler = scheduler
+        self.searchApiProtocol = searchApiProtocol
     }
 
     func configSearchBar(searchBar: Observable<String>) {
         searchBar.debounce(0.3, scheduler: scheduler)
             .filter({ !$0.isEmpty })
             .flatMapLatest({ (key) -> Observable<Result<Categories>> in
-                return Api.Search.search(keySearch: key)
+                return self.searchApiProtocol.search(keySearch: key)
             })
             .subscribe(onNext: { [weak self] result in
                 guard let this = self else { return }
