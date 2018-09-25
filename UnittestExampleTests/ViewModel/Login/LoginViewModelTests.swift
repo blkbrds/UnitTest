@@ -129,7 +129,7 @@ final class LoginViewModelTests: QuickSpec {
             context("when username and password invalid") {
                 it("`validate` username and password failure") {
                     viewModel.username = "thinh.nguyen@gmail.vn"
-                     expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
+                    expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
                 }
             }
         }
