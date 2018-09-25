@@ -54,10 +54,12 @@ final class LoginViewModelTests: QuickSpec {
                 }
 
                 /// case with password true
-                it("show error password format ") {
+                it("show error password format ", closure: {
                     viewModel.password = "iOS123456"
-                    expect { try viewModel.validatePassword() }.toNot(throwError())
-                }
+                    expect { try
+                        viewModel.validatePassword()
+                    }
+                })
             }
         }
 
@@ -86,7 +88,7 @@ final class LoginViewModelTests: QuickSpec {
             context("when username invalid") {
                 it("`validateUsername` not show error username ") {
                     viewModel.username = "thinh.nguyen@asiantech.vn"
-                    expect { try viewModel.validateUsername() }.toNot(throwError())
+                    expect { try viewModel.validateUsername() }
                 }
             }
         }
@@ -99,7 +101,9 @@ final class LoginViewModelTests: QuickSpec {
                 it("`validate` username and password success") {
                     viewModel.username = "thinh.nguyen@asiantech.vn"
                     viewModel.password = "abcd9999999"
-                    expect { try viewModel.validate() }.toNot(throwError())
+                    expect { try
+                        viewModel.validate()
+                    }
                 }
             }
 
@@ -108,7 +112,7 @@ final class LoginViewModelTests: QuickSpec {
                 it("`validate` username failure and password success") {
                     viewModel.username = "thinh.nguyen@gmail.vn"
                     viewModel.password = "abcd9999999"
-                    expect { try viewModel.validate() }.to(throwError())
+                    expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
                 }
             }
 
