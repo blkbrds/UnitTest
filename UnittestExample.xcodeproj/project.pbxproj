@@ -75,6 +75,8 @@
 		AB4704C1215207980072D340 /* IndexPathExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C0215207980072D340 /* IndexPathExt.swift */; };
 		AB4704C421534B820072D340 /* SearchApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C321534B820072D340 /* SearchApiMock.swift */; };
 		AB4704C721534CC80072D340 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C621534CC80072D340 /* SearchViewModelTests.swift */; };
+		AB4704C9215893160072D340 /* ApiSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704C8215893160072D340 /* ApiSearchTests.swift */; };
+		AB4704CC2158EBED0072D340 /* BlockingObservableExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4704CA2158EBAB0072D340 /* BlockingObservableExt.swift */; };
 		ABF271552150A40A00C41AEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF271532150A40A00C41AEA /* SearchViewController.swift */; };
 		ABF271562150A40A00C41AEA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF271542150A40A00C41AEA /* SearchViewController.xib */; };
 		ABF271582150A44500C41AEA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF271572150A44500C41AEA /* SearchViewModel.swift */; };
@@ -168,6 +170,8 @@
 		AB4704C0215207980072D340 /* IndexPathExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathExt.swift; sourceTree = "<group>"; };
 		AB4704C321534B820072D340 /* SearchApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiMock.swift; sourceTree = "<group>"; };
 		AB4704C621534CC80072D340 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		AB4704C8215893160072D340 /* ApiSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSearchTests.swift; sourceTree = "<group>"; };
+		AB4704CA2158EBAB0072D340 /* BlockingObservableExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingObservableExt.swift; sourceTree = "<group>"; };
 		ABF271532150A40A00C41AEA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ABF271542150A40A00C41AEA /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ABF271572150A44500C41AEA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 		4F109569214EB777006CDCD6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB4704CA2158EBAB0072D340 /* BlockingObservableExt.swift */,
 				4F10956A214EB788006CDCD6 /* DataExt.swift */,
 				4F109578214F6752006CDCD6 /* MatchersExt.swift */,
 			);
@@ -490,6 +495,7 @@
 			children = (
 				4F10957C214F81E9006CDCD6 /* ApiCategoriesTest.swift */,
 				4F109586214F96A9006CDCD6 /* ApiPlaylistTests.swift */,
+				AB4704C8215893160072D340 /* ApiSearchTests.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -854,9 +860,11 @@
 				AB4704C421534B820072D340 /* SearchApiMock.swift in Sources */,
 				4F109579214F6752006CDCD6 /* MatchersExt.swift in Sources */,
 				257759AF214B524700123248 /* LoginViewModelTests.swift in Sources */,
+				AB4704C9215893160072D340 /* ApiSearchTests.swift in Sources */,
 				0B58811D214110D0009E1C8C /* UnittestExampleTests.swift in Sources */,
 				4F109585214F94E6006CDCD6 /* PlaylistCellViewModelTests.swift in Sources */,
 				4F109582214F918F006CDCD6 /* CategoriesCellViewModelTests.swift in Sources */,
+				AB4704CC2158EBED0072D340 /* BlockingObservableExt.swift in Sources */,
 				4F10956B214EB788006CDCD6 /* DataExt.swift in Sources */,
 				4F10957D214F81E9006CDCD6 /* ApiCategoriesTest.swift in Sources */,
 			);

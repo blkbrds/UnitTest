@@ -82,7 +82,7 @@ final class ApiCategoriesTest: QuickSpec {
 extension ApiCategoriesTest {
 
     struct Dummy {
-        static var categoriesParameters: [String : Any] {
+        static var categoriesParameters: [String: Any] {
             return Api.Categories.CategoryListParams.JSON
         }
     }
