@@ -20,29 +20,20 @@ final class PlaylistCell: TableCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configView()
-    }
-
     override func prepareForReuse() {
         super.prepareForReuse()
         thumbnailView.image = nil
     }
 
-    private func configView() {
-        titleLabel.text = viewModel.title
-        contentLabel.text = viewModel.description
-        if let url = URL(string: viewModel.path), let data = try? Data(contentsOf: url) {
-            thumbnailView.image = UIImage(data: data)
-        }
-    }
-
     private func updateView() {
         titleLabel.text = viewModel.title
         contentLabel.text = viewModel.description
-        if let url = URL(string: viewModel.path), let data = try? Data(contentsOf: url) {
-            thumbnailView.image = UIImage(data: data)
+        DispatchQueue.global(qos: .background).async {
+            if let url = URL(string: self.viewModel.path), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    self.thumbnailView.image = UIImage(data: data)
+                }
+            }
         }
     }
 }

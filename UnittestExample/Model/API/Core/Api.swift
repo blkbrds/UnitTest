@@ -21,6 +21,8 @@ final class Api {
     struct Playlist { }
 
     struct Video { }
+
+    struct Search { }
 }
 
 extension Api.Path {
@@ -38,6 +40,10 @@ extension Api.Path {
     /// Get list video from playlistID
     struct Video {
         static var path: String { return Api.Path.baseURL / "playlistItems" }
+    }
+
+    struct Search {
+        static var path: String { return Api.Path.baseURL / "search" }
     }
 }
 

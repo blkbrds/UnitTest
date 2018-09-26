@@ -18,6 +18,8 @@ PODS:
   - Quick (1.3.0)
   - RxBlocking (4.2.0):
     - RxSwift (~> 4.0)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
   - RxTest (4.2.0):
     - RxSwift (~> 4.0)
@@ -38,6 +40,8 @@ DEPENDENCIES:
   - ObjectMapper (= 3.1.0)
   - Quick (= 1.3.0)
   - RxBlocking (= 4.2.0)
+  - RxCocoa (= 4.2.0)
+  - RxSwift (= 4.2.0)
   - RxTest (= 4.2.0)
   - SVProgressHUD (= 2.2.5)
   - SwiftDate (= 4.5.0)
@@ -56,6 +60,7 @@ SPEC REPOS:
     - ObjectMapper
     - Quick
     - RxBlocking
+    - RxCocoa
     - RxSwift
     - RxTest
     - SVProgressHUD
@@ -75,6 +80,7 @@ SPEC CHECKSUMS:
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
   RxBlocking: e339d8a6e752e25ade95ff858466c55436668f59
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -83,6 +89,6 @@ SPEC CHECKSUMS:
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 653239e8fc718e89569d1b57fe691f545dae6241
+PODFILE CHECKSUM: d8e16a73731a9fe2295d089dd09b22d06ad89392
 
 COCOAPODS: 1.5.3

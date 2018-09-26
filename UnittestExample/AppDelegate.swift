@@ -33,13 +33,24 @@ extension AppDelegate {
         window?.makeKeyAndVisible()
         let isDidLogin = Session.shared.isLogin
         if isDidLogin {
-            let vc = CategoriesViewController()
-            let navi = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navi
+            configTabbar()
         } else {
             let vc = LoginViewController()
             let navi = UINavigationController(rootViewController: vc)
             window?.rootViewController = navi
         }
+    }
+
+    private func configTabbar() {
+        let categoryVC = CategoriesViewController()
+        let searchVC = SearchViewController()
+        categoryVC.tabBarItem = UITabBarItem(title: "Category", image: #imageLiteral(resourceName: "home"), tag: 0)
+        searchVC.tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1)
+        let categoryNavi = UINavigationController(rootViewController: categoryVC)
+        let searchNavi = UINavigationController(rootViewController: searchVC)
+        let controllers = [categoryNavi, searchNavi]
+        let tabbar = UITabBarController()
+        tabbar.viewControllers = controllers
+        window?.rootViewController = tabbar
     }
 }
