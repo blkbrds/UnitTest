@@ -18,116 +18,135 @@ final class LoginViewModelTests: QuickSpec {
 
         var viewModel: LoginViewModel!
 
-        beforeEach {
-            viewModel = LoginViewModel()
-        }
+        describe("Test login view model") {
 
-        describe("Test `validatePassword` function") {
-
-            context("When password is empty") {
-
-                it("`validatePassword` should throw error password empty") {
-                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.empty))
-                }
+            beforeEach {
+                viewModel = LoginViewModel()
             }
 
-            context("When password is invalid") {
+            // test username
+            // empty username
+            context("If username is empty") {
 
-                it("`validatePassword` should throw length error when password count < 8") {
-                    viewModel.password = "abc"
-                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .length)))
-                }
-
-                it("`validatePassword` should throw length error when password count > 20") {
-                    viewModel.password = "abc1234578910abcabcabcduu4h7flak"
-                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .length)))
-                }
-
-                it("`validatePassword` should throw format error") {
-                    viewModel.password = "abcc._@&"
-                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .format)))
-                }
-            }
-
-            context("When password is valid") {
-
-                it("`validatePassword` shouldn't throw error") {
-                    viewModel.password = "abcd12345"
-                    expect { try viewModel.validatePassword() }.toNot(throwError())
-                }
-            }
-        }
-
-        describe("Test `validateUsername` function") {
-
-            context("When username is empty") {
-
-                it("`validateUsername` should throw error password empty") {
+                it("`validateUsername` should throw error username is empty") {
                     expect { try viewModel.validateUsername() }.to(throwError(UsernameError.empty))
                 }
+
             }
 
-            context("When username is invalid") {
+            // invalid username
+            context("If username is invalid") {
 
-                it("`validateUsername` should throw format error") {
+                it("`validateUsername` should throw error user name has invalid format") {
                     viewModel.username = "abc"
                     expect { try viewModel.validateUsername() }.to(throwError(UsernameError.invalid(reason: .format)))
                 }
 
-                it("`validateUsername` should throw suffix error") {
+                it("`validateUsername` should throw error user name has invalid suffix") {
                     viewModel.username = "abc@gmail.com"
                     expect { try viewModel.validateUsername() }.to(throwError(UsernameError.invalid(reason: .suffix)))
                 }
             }
 
-            context("When username is valid") {
+            // valid user name
+            context("If username is valid") {
 
-                it("`validateUsername` shouldn't throw error") {
-                    viewModel.username = "tung.nguyen@asiantech.vn"
-                    expect { try viewModel.validateUsername() }.toNot(throwError())
+                beforeEach {
+                    viewModel.username = "van.le@asiantech.vn"
                 }
-            }
-        }
 
-        describe("Test `validate` function") {
-
-            context("When username & password are empty") {
-
-                it("`validate` should throw error username empty") {
-                    expect { try viewModel.validate() }.to(throwError(UsernameError.empty))
+                it("`validateUsername` should not throw error") {
+                    expect { try viewModel.validateUsername() }.notTo(throwError())
                 }
+
             }
 
-            context("When username is valid, password is invalid") {
+            // test password
+            // empty password
+            context("If password is empty") {
 
-                it("`validate` should throw password's length error") {
-                    viewModel.username = "tung.nguyen@asiantech.vn"
-                    viewModel.password = "1234"
-                    expect { try viewModel.validate() }.to(throwError(PasswordError.invalid(reason: .length)))
+                it("`validatePassword` should throw error password is empty") {
+                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.empty))
                 }
             }
 
-            context("When username is invalid, password is valid") {
+            // invalid password
+            context("If password is invalid") {
 
-                it("`validate` should throw  username suffix error") {
-                    viewModel.username = "tung.nguyen@gmail.vn"
-                    viewModel.password = "123456789a"
-                    expect { try viewModel.validate() }.to(throwError(UsernameError.invalid(reason: .suffix)))
+                it("`validatePassword` should throw error password has invalid length when length < 8") {
+                    viewModel.password = "abc"
+                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .length)))
+                }
+
+                it("`validatePassword` should throw error password has invalid length when length > 20") {
+                    viewModel.password = "111111111111111111111111111111111111111"
+                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .length)))
+                }
+
+                it("`validatePassword` should throw error password has invalid format") {
+                    viewModel.password = "aaaaa#aaaa"
+                    expect { try viewModel.validatePassword() }.to(throwError(PasswordError.invalid(reason: .format)))
                 }
             }
 
-            context("When username & password are valid") {
+            // valid password
+            context("If password is valid") {
 
-                it("`validate` shouldn't throw error") {
-                    viewModel.username = "tung.nguyen@asiantech.vn"
-                    viewModel.password = "abcd12345"
-                    expect { try viewModel.validate() }.toNot(throwError())
+                beforeEach {
+                    viewModel.password = "aaaaaaaaaa"
+                }
+
+                it("`validatePassword` should not throw error") {
+                    expect { try viewModel.validatePassword() }.notTo(throwError())
                 }
             }
-        }
 
-        afterEach {
-            viewModel = nil
+            // test function validate()
+            context("If username and password are empty") {
+
+                it("`validate` should throw error") {
+                    expect { try viewModel.validate() }.to(throwError())
+                }
+            }
+
+            context("If username is invalid") {
+
+                beforeEach {
+                    viewModel.username = "hhh"
+                }
+
+                it("`validate` should throw error") {
+                    expect { try viewModel.validate() }.to(throwError())
+                }
+            }
+
+            context("If username is valid and password is invalid") {
+
+                beforeEach {
+                    viewModel.username = "van.le@asiantech.vn"
+                    viewModel.password = "aaa"
+                }
+
+                it("`validate` should throw error") {
+                    expect { try viewModel.validate() }.to(throwError())
+                }
+            }
+
+            context("If both username and password are valid") {
+
+                beforeEach {
+                    viewModel.username = "van.le@asiantech.vn"
+                    viewModel.password = "aaaaaaaaaa"
+                }
+
+                it("`validate` should not throw error") {
+                    expect { try viewModel.validate() }.notTo(throwError())
+                }
+            }
+
+            afterEach {
+                viewModel = nil
+            }
         }
     }
 }
