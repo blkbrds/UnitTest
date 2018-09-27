@@ -16,8 +16,8 @@ import Mockingjay
 class ApiCategoriesTests: QuickSpec {
 
     override func spec() {
-        describe("Api Categories test") {
-            it("Success") {
+        describe("Test Api Categories") {
+            it("When Call Api Categories success") {
                 let data = Data(forResource: "CategoryList", ofType: "json", on: self)
                 let path = Api.Path.Categories.path
                 self.stub(http(.get, uri: path, parameters: Api.Categories.CategoryListParams.JSON), jsonData(data))
@@ -28,6 +28,8 @@ class ApiCategoriesTests: QuickSpec {
                             if let value = value as? Categories {
                                 expect(value.kind) == "youtube#videoCategoryListResponse"
                                 expect(value.etag) == "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/1v2mrzYSYG6onNLt2qTj13hkQZk\""
+                            } else {
+                                fail("Respone void")
                             }
                         case .failure(let error):
                             fail(error.localizedDescription)
