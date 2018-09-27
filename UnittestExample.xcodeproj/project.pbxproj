@@ -61,6 +61,7 @@
 		4F10956F214F5220006CDCD6 /* VideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E43CC21427AEF0087F605 /* VideoList.json */; };
 		4F109577214F5933006CDCD6 /* ErrorDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F109575214F5652006CDCD6 /* ErrorDetail.json */; };
 		4F109579214F6752006CDCD6 /* MatchersExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F109578214F6752006CDCD6 /* MatchersExt.swift */; };
+		5136ECC62159F4DD000550E9 /* CategoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5136ECC52159F4DD000550E9 /* CategoriesTests.swift */; };
 		9BF94A80214A130B004CC6A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */; };
 		9BF94A81214A130B004CC6A1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */; };
 		9BF94A88214A464B004CC6A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF94A87214A464B004CC6A1 /* LoginViewModel.swift */; };
@@ -137,6 +138,7 @@
 		4F10956A214EB788006CDCD6 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		4F109575214F5652006CDCD6 /* ErrorDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ErrorDetail.json; sourceTree = "<group>"; };
 		4F109578214F6752006CDCD6 /* MatchersExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchersExt.swift; sourceTree = "<group>"; };
+		5136ECC52159F4DD000550E9 /* CategoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTests.swift; sourceTree = "<group>"; };
 		6DB0DFA8DE07D81686E10213 /* Pods-UnittestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF94A7E214A130B004CC6A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BF94A7F214A130B004CC6A1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		257759AC214B522700123248 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5136ECC42159F4B3000550E9 /* Api */,
 				257759AD214B523300123248 /* Login */,
 			);
 			path = ViewModel;
@@ -420,6 +423,14 @@
 				4F109578214F6752006CDCD6 /* MatchersExt.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5136ECC42159F4B3000550E9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5136ECC52159F4DD000550E9 /* CategoriesTests.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		9BF94A7D214A12F6004CC6A1 /* Login */ = {
@@ -725,6 +736,7 @@
 			files = (
 				4F109579214F6752006CDCD6 /* MatchersExt.swift in Sources */,
 				257759AF214B524700123248 /* LoginViewModelTests.swift in Sources */,
+				5136ECC62159F4DD000550E9 /* CategoriesTests.swift in Sources */,
 				0B58811D214110D0009E1C8C /* UnittestExampleTests.swift in Sources */,
 				4F10956B214EB788006CDCD6 /* DataExt.swift in Sources */,
 			);
@@ -881,6 +893,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/UnittestExample/Supports/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,6 +912,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/UnittestExample/Supports/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
