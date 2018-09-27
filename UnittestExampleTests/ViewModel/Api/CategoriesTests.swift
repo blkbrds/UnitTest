@@ -29,7 +29,7 @@ class ApiCategoriesTests: QuickSpec {
                                 expect(value.kind) == "youtube#videoCategoryListResponse"
                                 expect(value.etag) == "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/1v2mrzYSYG6onNLt2qTj13hkQZk\""
                             } else {
-                                fail("respone")
+                                fail("The respone is not valid")
                            }
                         case .failure(let error):
                             fail(error.localizedDescription)
