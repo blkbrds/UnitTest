@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftUtils
 
 enum Process {
     case encode

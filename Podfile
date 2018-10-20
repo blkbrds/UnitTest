@@ -23,8 +23,11 @@ target 'UnittestExample' do
 
     # Utils
     pod 'SwiftLint', '0.25.0' # A tool to enforce Swift style and conventions.
-    pod 'SwiftUtils', '4.0.1' # Swift shorthand.
+    pod 'SwifterSwift', '4.3.0'
     pod 'SwiftDate', '4.5.0' # The best way to manage Dates and Timezones in Swift.
+    pod 'TPKeyboardAvoiding', '~> 1.3.2'
+    pod 'Kingfisher', '~> 4.6.2'
+    pod 'SKPhotoBrowser', '~> 5.0.5'
 
     # pod 'AsyncSwift', '2.0.4' # Syntactic sugar in Swift for asynchronous dispatches in Grand Central Dispatch.
     # pod 'SwiftyUserDefaults', '3.0.1' # Modern Swift API for NSUserDefaults.

@@ -12,7 +12,6 @@
  */
 
 import Foundation
-import SwiftUtils
 
 extension App {
     struct String {

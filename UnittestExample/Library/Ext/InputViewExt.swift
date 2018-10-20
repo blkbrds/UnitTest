@@ -7,12 +7,17 @@
 //
 
 import UIKit
-import SwiftUtils
 
 extension UITextView {
-    var string: String { return text ?? "" }
+    var string: String {
+        guard let text = text else { return "" }
+        return text
+    }
 }
 
 extension UITextField {
-    var string: String { return text ?? "" }
+    var string: String {
+        guard let text = text else { return "" }
+        return text
+    }
 }

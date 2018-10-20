@@ -8,7 +8,6 @@
 
 import Alamofire
 import ObjectMapper
-import SwiftUtils
 
 extension Request {
     static func responseJSONSerializer(log: Bool = true,
@@ -49,9 +48,9 @@ extension Request {
                 let message = errors.reduce("", { $0 + $1 + "\n" }).trimmed
                 err = NSError(code: statusCode, message: message)
             } else if let status = HTTPStatus(code: statusCode) {
-                err = NSError(domain: Api.Path.baseURL.host, status: status)
+                err = NSError(domain: Api.Path.baseURL, status: status)
             } else {
-                err = NSError(domain: Api.Path.baseURL.host,
+                err = NSError(domain: Api.Path.baseURL,
                               code: statusCode,
                               message: "Unknown HTTP status code received (\(statusCode)).")
             }

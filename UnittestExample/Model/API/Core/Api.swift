@@ -18,6 +18,18 @@ final class Api {
             static let baseURL = "https://pro-asiantech.vn"
         #endif
     }
+
+    struct WebView { }
+}
+// MARK: - WebView
+extension Api.WebView {
+
+    struct Google {
+
+        private static let path = "https://foursquare.com/oauth2"
+
+        static let authenticate: String = path / "authenticate"
+    }
 }
 
 protocol URLStringConvertible {

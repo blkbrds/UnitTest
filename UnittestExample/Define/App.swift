@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct App { }
+struct App {
+
+    struct Foursquare {
+        static var clienID = "W3FQKXGJIHXNX4ZFT1GX04LC5SRNI5ULAVMQJB4DNIWVM3HJ"
+        static var clienSecret = "U1YHLKYWW1MYI3ZNSE3XQKPFHHVEQDOMUPVSDWRLJHDQGUGX"
+        static var redirectURI = "http://google.com"
+    }
+}
 
 struct Google {
     static var apiPublicKey: String { return "publicKey" }
