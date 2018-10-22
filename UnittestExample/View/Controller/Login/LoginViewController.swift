@@ -14,11 +14,19 @@ final class LoginViewController: ViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var alertLabel: UILabel!
+
+    var viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configUI()
-        dummyData()
+        loginButton.isUserInteractionEnabled = false
+        loginButton.backgroundColor = UIColor(red: 146.0,
+                                                   green: 146.0,
+                                                   blue: 146.0,
+                                                   alpha: 1.0)
+        configViewModel()
+        alertLabel.text = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,8 +39,46 @@ final class LoginViewController: ViewController {
         navigationController?.isNavigationBarHidden = false
     }
 
+    private func configViewModel() {
+
+        viewModel.validateError = { [weak self] error in
+            guard let this = self else { return }
+            this.loginButton.isUserInteractionEnabled = false
+            this.loginButton.backgroundColor = UIColor(red: 146.0,
+                                                       green: 146.0,
+                                                       blue: 146.0,
+                                                       alpha: 1.0)
+            if let error = error as? UsernameError {
+                this.handle(error: error)
+            } else if let error = error as? PasswordError {
+                this.handle(error: error)
+            } else {
+                this.alertLabel.text = "Unknown Error"
+            }
+        }
+
+        viewModel.validateSuccess = { [weak self] in
+            guard let this = self else { return }
+            this.loginButton.backgroundColor = UIColor(red: 255.0,
+                                                       green: 0.0,
+                                                       blue: 0.0,
+                                                       alpha: 1.0)
+            this.configUI()
+            this.loginButton.isUserInteractionEnabled = true
+            this.alertLabel.text = ""
+        }
+    }
+
     private func configUI() {
         loginButton.cornerRadius = Config.cornerButton
+    }
+
+    private func handle(error: PasswordError) {
+        alertLabel.text = error.localizedDescription
+    }
+
+    private func handle(error: UsernameError) {
+        alertLabel.text = error.localizedDescription
     }
 
     private func dummyData() {
@@ -42,8 +88,20 @@ final class LoginViewController: ViewController {
 
     // MARK: - IBAction
     @IBAction func loginButtonTouchUpInside(_ sender: UIButton) {
+        Session.shared.isLogin = true
         let vc = HomeViewController()
         navigationController?.pushViewController(vc)
+    }
+
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+        switch sender {
+        case emailTextField:
+            viewModel.username = text
+        case passwordTextField:
+            viewModel.password = text
+        default: break
+        }
     }
 
     @IBAction func createNewAcountTouchUpInside(_ sender: UIButton) {

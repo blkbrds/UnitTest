@@ -32,6 +32,8 @@
 		0B5E43BD214225810087F605 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43A62142257D0087F605 /* ResponseSerializer.swift */; };
 		0B5E43BE214225810087F605 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E43A72142257D0087F605 /* Api.swift */; };
 		3AE495A7B7CB9529036BA3B8 /* Pods_UnittestExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA7C24D6808CDA567F46298 /* Pods_UnittestExample.framework */; };
+		4FEF51A4217DC19400150A7C /* Loginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF51A3217DC19400150A7C /* Loginable.swift */; };
+		4FEF51A6217DC75100150A7C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF51A5217DC75100150A7C /* Session.swift */; };
 		89506510BE05DF6F882CEA7E /* Pods_UnittestExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDD20FB43A897986273F5AF /* Pods_UnittestExampleTests.framework */; };
 		A52223D62178DAFF00A95348 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52223CC2178DAFF00A95348 /* LoginViewModel.swift */; };
 		A52223D72178DAFF00A95348 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52223CD2178DAFF00A95348 /* LoginViewController.xib */; };
@@ -93,6 +95,8 @@
 		0B5E43A62142257D0087F605 /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		0B5E43A72142257D0087F605 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4CA7C24D6808CDA567F46298 /* Pods_UnittestExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FEF51A3217DC19400150A7C /* Loginable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loginable.swift; sourceTree = "<group>"; };
+		4FEF51A5217DC75100150A7C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		80885C77A161996854CB5DD7 /* Pods-UnittestExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.release.xcconfig"; sourceTree = "<group>"; };
 		973E9061D82285F88CB6B7CF /* Pods-UnittestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExample/Pods-UnittestExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A52223CC2178DAFF00A95348 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		0B5E439E2142257D0087F605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF51A5217DC75100150A7C /* Session.swift */,
 				0B5E43A12142257D0087F605 /* API */,
 				A52223E92178E6C400A95348 /* Scheme */,
 			);
@@ -319,6 +324,7 @@
 				A52223CC2178DAFF00A95348 /* LoginViewModel.swift */,
 				A52223CD2178DAFF00A95348 /* LoginViewController.xib */,
 				A52223CE2178DAFF00A95348 /* LoginViewController.swift */,
+				4FEF51A3217DC19400150A7C /* Loginable.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -602,11 +608,13 @@
 				0B5E43B6214225810087F605 /* ViewController.swift in Sources */,
 				0B5E43AF214225810087F605 /* String.swift in Sources */,
 				A52223ED2178ED4200A95348 /* ErrorExt.swift in Sources */,
+				4FEF51A4217DC19400150A7C /* Loginable.swift in Sources */,
 				0B5E43B8214225810087F605 /* Button.swift in Sources */,
 				0B5E43B7214225810087F605 /* TableCell.swift in Sources */,
 				0B5E43BD214225810087F605 /* ResponseSerializer.swift in Sources */,
 				0B5E43AC214225810087F605 /* UIViewControllerExt.swift in Sources */,
 				0B5E43AA214225810087F605 /* InputViewExt.swift in Sources */,
+				4FEF51A6217DC75100150A7C /* Session.swift in Sources */,
 				0B5E43BE214225810087F605 /* Api.swift in Sources */,
 				0B5E43B5214225810087F605 /* CollectionCell.swift in Sources */,
 				A52223D82178DAFF00A95348 /* LoginViewController.swift in Sources */,

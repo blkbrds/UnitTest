@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UnittestExample" customModuleProvider="target">
             <connections>
+                <outlet property="alertLabel" destination="hgL-W3-MxK" id="vDs-hh-xqT"/>
                 <outlet property="emailTextField" destination="683-eb-jPF" id="jUl-4E-NHn"/>
                 <outlet property="loginButton" destination="gPH-D4-Kkm" id="CSN-Do-QDZ"/>
                 <outlet property="passwordTextField" destination="teW-vW-GLH" id="6Q0-Fc-YBr"/>
@@ -91,7 +92,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPH-D4-Kkm">
-                                            <rect key="frame" x="31.5" y="180.5" width="256" height="41"/>
+                                            <rect key="frame" x="31.5" y="181.5" width="256" height="40"/>
                                             <color key="backgroundColor" red="0.26274509800000001" green="0.80784313730000001" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Sign in" image="ic_next_blur">
@@ -102,10 +103,10 @@
                                             </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="29j-8B-U0N">
-                                            <rect key="frame" x="32.5" y="0.0" width="255.5" height="142.5"/>
+                                            <rect key="frame" x="32.5" y="0.0" width="255.5" height="142"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="683-eb-jPF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="255.5" height="41"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="255.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.83921568629999999" green="0.90980392160000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.61960784310000006" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -121,9 +122,12 @@
                                                             <color key="value" red="0.71372549019607845" green="0.77647058823529413" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="textFieldEditingChanged:" destination="-1" eventType="editingDidEnd" id="2eH-Bd-srv"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="teW-vW-GLH">
-                                                    <rect key="frame" x="0.0" y="51" width="255.5" height="40.5"/>
+                                                    <rect key="frame" x="0.0" y="50.5" width="255.5" height="41"/>
                                                     <color key="backgroundColor" red="0.83921568629999999" green="0.90980392160000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.61960784310000006" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -139,22 +143,16 @@
                                                             <color key="value" red="0.71372549019999998" green="0.77647058820000003" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="textFieldEditingChanged:" destination="-1" eventType="editingDidEnd" id="3iE-MO-H8t"/>
+                                                    </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Do-GC-ciG">
-                                                    <rect key="frame" x="0.0" y="101.5" width="255.5" height="41"/>
-                                                    <color key="tintColor" red="0.10980392160000001" green="0.34901960780000002" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="Forgot Password?">
-                                                                <attributes>
-                                                                    <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
-                                                                    <font key="NSOriginalFont" size="14" name=".AppleSystemUIFontEmphasized"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                    </state>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-W3-MxK">
+                                                    <rect key="frame" x="0.0" y="101.5" width="255.5" height="40.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.35654827335721817" blue="0.34696641767357816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </stackView>
                                     </subviews>

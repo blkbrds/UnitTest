@@ -29,4 +29,15 @@ extension String {
             return String(data: data, encoding: .utf8)
         }
     }
+
+    // MARK: Validation
+    public struct Regex {
+        public static let PasswordRegex = "[a-zA-Z0-9_]+"
+        public static let EmailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    }
+
+    public func validate(_ regex: String) -> Bool {
+        let pre = NSPredicate(format: "SELF MATCHES %@", regex)
+        return pre.evaluate(with: self)
+    }
 }
