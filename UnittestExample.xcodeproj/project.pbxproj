@@ -51,6 +51,8 @@
 		A52224042179836C00A95348 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52224022179836C00A95348 /* ThumbnailCell.swift */; };
 		A522240A2179CFCB00A95348 /* FoursquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52224082179CFCB00A95348 /* FoursquareViewController.swift */; };
 		A522240B2179CFCB00A95348 /* FoursquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52224092179CFCB00A95348 /* FoursquareViewController.xib */; };
+		A53D6274217DABFA00F020A2 /* API.Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D6273217DABFA00F020A2 /* API.Venues.swift */; };
+		A53D6276217DC41C00F020A2 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53D6275217DC41C00F020A2 /* Venue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		A52224022179836C00A95348 /* ThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		A52224082179CFCB00A95348 /* FoursquareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareViewController.swift; sourceTree = "<group>"; };
 		A52224092179CFCB00A95348 /* FoursquareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoursquareViewController.xib; sourceTree = "<group>"; };
+		A53D6273217DABFA00F020A2 /* API.Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Venues.swift; sourceTree = "<group>"; };
+		A53D6275217DC41C00F020A2 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		DBDD20FB43A897986273F5AF /* Pods_UnittestExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnittestExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1345AEA4BE78D9B84DE964E /* Pods-UnittestExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnittestExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnittestExampleTests/Pods-UnittestExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				0B5E43A22142257D0087F605 /* Core */,
+				A53D6273217DABFA00F020A2 /* API.Venues.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				A52223EA2178E6DC00A95348 /* Promotion.swift */,
+				A53D6275217DC41C00F020A2 /* Venue.swift */,
 			);
 			path = Scheme;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVM-Swift/MVVM.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -543,6 +550,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -583,6 +591,7 @@
 				0B5E43B1214225810087F605 /* App.swift in Sources */,
 				A52223EF2178EE9900A95348 /* DataExt.swift in Sources */,
 				0B588108214110CF009E1C8C /* AppDelegate.swift in Sources */,
+				A53D6276217DC41C00F020A2 /* Venue.swift in Sources */,
 				0B5E43AE214225810087F605 /* DefaultsExt.swift in Sources */,
 				0B5E43B2214225810087F605 /* Color.swift in Sources */,
 				0B5E43BA214225810087F605 /* RequestSerializer.swift in Sources */,
@@ -594,6 +603,7 @@
 				0B5E43AB214225810087F605 /* StringExt.swift in Sources */,
 				0B5E43AD214225810087F605 /* MapperExt.swift in Sources */,
 				A52223F12178EEE400A95348 /* DictionaryExt.swift in Sources */,
+				A53D6274217DABFA00F020A2 /* API.Venues.swift in Sources */,
 				0B5E43B0214225810087F605 /* Font.swift in Sources */,
 				0B5E43BB214225810087F605 /* Error.swift in Sources */,
 				A52224042179836C00A95348 /* ThumbnailCell.swift in Sources */,

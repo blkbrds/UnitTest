@@ -10,13 +10,16 @@ import Foundation
 
 final class Api {
     struct Path {
-        #if DEBUG
-            static let baseURL = "https://dev-asiantech.vn"
-        #elseif STG
-            static let baseURL = "https://stg-asiantech.vn"
-        #else
-            static let baseURL = "https://pro-asiantech.vn"
-        #endif
+        static let baseURL = "https://api.foursquare.com/v2"
+
+    }
+
+    struct Venues {
+        let id: String
+
+        init(id: String) {
+            self.id = id
+        }
     }
 
     struct WebView { }
@@ -29,6 +32,23 @@ extension Api.WebView {
         private static let path = "https://foursquare.com/oauth2"
 
         static let authenticate: String = path / "authenticate"
+    }
+}
+
+extension Api.Path {
+
+    struct Venues {
+        private static let path = baseURL / "venues"
+        private let id: String
+        static let trending = path / "trending"
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var detail: String {
+            return Venues.path / id
+        }
     }
 }
 

@@ -15,11 +15,17 @@ final class FoursquareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configWebView()
+        loadWebView()
     }
 
     private func configWebView() {
         webView = WKWebView(frame: view.bounds)
+        webView.navigationDelegate = self
+        let websiteDataTypes = WKWebsiteDataStore.allWebsiteDataTypes()
+        let date = Date.distantPast
+        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: date) { }
+        view.addSubview(webView)
     }
 
     private func loadWebView() {
@@ -31,5 +37,16 @@ final class FoursquareViewController: UIViewController {
         url.appendQueryParameters(parameter)
         let request = URLRequest(url: url)
         webView.load(request)
+    }
+}
+
+extension FoursquareViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        decisionHandler(.allow)
     }
 }
