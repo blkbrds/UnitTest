@@ -8,6 +8,7 @@ PODS:
   - Kingfisher (4.6.4)
   - MVVM-Swift (1.1.0)
   - ObjectMapper (3.1.0)
+  - RxSwift (4.2.0)
   - SKPhotoBrowser (5.0.9)
   - SVProgressHUD (2.2.5)
   - SwiftDate (4.5.0)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.6.2)
   - MVVM-Swift (= 1.1.0)
   - ObjectMapper (= 3.1.0)
+  - RxSwift (= 4.2.0)
   - SKPhotoBrowser (~> 5.0.5)
   - SVProgressHUD (= 2.2.5)
   - SwiftDate (= 4.5.0)
@@ -53,6 +55,7 @@ SPEC REPOS:
     - Kingfisher
     - MVVM-Swift
     - ObjectMapper
+    - RxSwift
     - SKPhotoBrowser
     - SVProgressHUD
     - SwiftDate
@@ -68,6 +71,7 @@ SPEC CHECKSUMS:
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SKPhotoBrowser: 668c29bdd9d4d276026fc131c55e96d902c2463c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: 17dd829c004a2d60432ef63ffcdb26ca2eb97a60
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: f1dd3a031521e3412eac5411a9b58afcd3dfa3b9
+PODFILE CHECKSUM: 8f3f0e21dde07dff5f5cb328db4908f271e62047
 
 COCOAPODS: 1.5.3

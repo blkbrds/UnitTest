@@ -18,6 +18,7 @@ target 'UnittestExample' do
     # pod 'SwiftyJSON', '4.0.0' # The better way to deal with JSON data in Swift.
 
     # Network
+    pod 'RxSwift', '4.2.0'
     pod 'Alamofire', '4.6.0' # Elegant HTTP Networking in Swift.
     pod 'AlamofireNetworkActivityIndicator', '2.2.0' # Controls the visibility of the network activity indicator on iOS using Alamofire.
 

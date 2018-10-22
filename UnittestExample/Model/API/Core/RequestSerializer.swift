@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import RxSwift
 import Foundation
 
 extension ApiManager {
@@ -41,5 +42,24 @@ extension ApiManager {
         })
 
         return request
+    }
+
+
+    @discardableResult
+    func rxRequest(
+        method: HTTPMethod,
+        urlString: URLStringConvertible,
+        parameters: [String: Any]? = nil,
+        headers: [String: String]? = nil) -> Observable<Result<Any>> {
+        return Observable<Result<Any>>.create({ (observer) -> Disposable in
+            api.request(method: method,
+                        urlString: urlString,
+                        parameters: parameters,
+                        headers: headers,
+                        completion: { (result) in
+                            observer.onNext(result)
+            })
+            return Disposables.create()
+        })
     }
 }
