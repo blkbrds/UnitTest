@@ -96,7 +96,7 @@ final class CategoriesViewModelTests: QuickSpec {
 extension CategoriesViewModelTests {
 
     struct Dummy {
-        static var categoriesParameters: [String : Any] {
+        static var categoriesParameters: [String: Any] {
             return Api.Categories.CategoryListParams.JSON
         }
 

@@ -11,13 +11,13 @@ import MVVM
 
 final class CategoriesCellViewModel: ViewModel {
 
-    private(set) var item: Items
+    private(set) var item: Dynamic<Items>
 
     var snipet: Snippet {
-        return item.snippet
+        return item.value.snippet
     }
 
     init(item: Items = Items()) {
-        self.item = item
+        self.item = Dynamic(item)
     }
 }
