@@ -14,17 +14,17 @@ target 'UnittestExample' do
     # pod 'LGSideMenuController', '2.1.1' # iOS view controller, shows left and right views by pressing button or gesture.
 
     # Data
-    pod 'ObjectMapper', '3.1.0' # Simple JSON Object mapping written in Swift. Please fix this version to 2.2.6 now.
+    pod 'ObjectMapper' # Simple JSON Object mapping written in Swift. Please fix this version to 2.2.6 now.
     # pod 'SwiftyJSON', '4.0.0' # The better way to deal with JSON data in Swift.
 
     # Network
-    pod 'Alamofire', '4.6.0' # Elegant HTTP Networking in Swift.
-    pod 'AlamofireNetworkActivityIndicator', '2.2.0' # Controls the visibility of the network activity indicator on iOS using Alamofire.
+    pod 'Alamofire', '4.7.3' # Elegant HTTP Networking in Swift.
+    pod 'AlamofireNetworkActivityIndicator', '2.3.0' # Controls the visibility of the network activity indicator on iOS using Alamofire.
 
     # Utils
-    pod 'SwiftLint', '0.25.0' # A tool to enforce Swift style and conventions.
-    pod 'SwiftUtils', '4.0.1' # Swift shorthand.
-    pod 'SwiftDate', '4.5.0' # The best way to manage Dates and Timezones in Swift.
+    pod 'SwiftLint', '0.27.0' # A tool to enforce Swift style and conventions.
+    pod 'SwiftUtils', '4.2' # Swift shorthand.
+    pod 'SwiftDate', '~> 4.5.0' # The best way to manage Dates and Timezones in Swift.
 
     # pod 'AsyncSwift', '2.0.4' # Syntactic sugar in Swift for asynchronous dispatches in Grand Central Dispatch.
     # pod 'SwiftyUserDefaults', '3.0.1' # Modern Swift API for NSUserDefaults.
@@ -37,8 +37,8 @@ target 'UnittestExample' do
     pod 'Crashlytics'
 
     # RxSwift and RxCocoa
-    pod 'RxSwift', '4.2.0'
-    pod 'RxCocoa', '4.2.0'
+    pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
 
     target 'UnittestExampleTests' do
         inherit! :search_paths
@@ -46,7 +46,8 @@ target 'UnittestExample' do
         pod 'Nimble', '7.1.2'
         pod 'Quick', '1.3.0'
         pod 'Mockingjay', '2.0.1'
-        pod 'RxTest', '4.2.0'
+        pod 'RxTest', '~> 4.0'
         pod 'RxBlocking', '4.2.0'
+        pod 'AsyncSwift'
     end
 end

@@ -25,10 +25,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZy-zY-88b">
+                        <rect key="frame" x="258" y="6" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="buttonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="shF-wA-Btg"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yDA-Iv-md0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7Z9-fX-A1n"/>
                     <constraint firstItem="yDA-Iv-md0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CGR-KF-3Ld"/>
+                    <constraint firstAttribute="trailing" secondItem="lZy-zY-88b" secondAttribute="trailing" constant="16" id="ErH-iC-ShG"/>
+                    <constraint firstItem="lZy-zY-88b" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SaA-5q-bMm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

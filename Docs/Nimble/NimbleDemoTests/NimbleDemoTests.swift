@@ -239,7 +239,7 @@ final class NimbleDemoTests: XCTestCase {
         expect(2).to(beLessThan(10))
         expect(2) < 10
 
-        expect(10).to(beLessThanOrEqualTo(10))
+        expect(10).to(beGreaterThanOrEqualTo(10))
         expect(10) >= 2
         expect(10) >= 10
 
