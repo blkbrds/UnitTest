@@ -21,31 +21,29 @@ final class LoginViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configViewModel()
+        validateData()
         alertLabel.text = ""
     }
 
     // MARK: - Private
-    private func configViewModel() {
-
-        viewModel.validateError = { [weak self] error in
+    private func validateData() {
+        viewModel.validateWhenValueChanged = { [weak self] in
             guard let this = self else { return }
             this.loginButton.isUserInteractionEnabled = false
             this.loginButton.backgroundColor = UIColor.RGB(146, 146, 146)
-            if let error = error as? UsernameError {
+
+            do {
+                try this.viewModel.validate()
+                this.alertLabel.text = ""
+                this.loginButton.backgroundColor = UIColor.RGB(225, 0, 0)
+                this.loginButton.isUserInteractionEnabled = true
+            } catch let error as UsernameError {
                 this.handle(error: error)
-            } else if let error = error as? PasswordError {
+            } catch let error as PasswordError {
                 this.handle(error: error)
-            } else {
+            } catch {
                 this.alertLabel.text = "Unknown Error"
             }
-        }
-
-        viewModel.validateSuccess = { [weak self] in
-            guard let this = self else { return }
-            this.loginButton.backgroundColor = UIColor.RGB(225, 0, 0)
-            this.loginButton.isUserInteractionEnabled = true
-            this.alertLabel.text = ""
         }
     }
 

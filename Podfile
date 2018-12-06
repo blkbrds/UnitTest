@@ -43,9 +43,9 @@ target 'UnittestExample' do
     target 'UnittestExampleTests' do
         inherit! :search_paths
         # Pods for testing
-        pod 'Nimble', '7.1.2'
-        pod 'Quick', '1.3.0'
-        pod 'Mockingjay', '2.0.1'
+        pod 'Nimble'
+        pod 'Quick'
+        pod 'Mockingjay'
         pod 'RxTest', '~> 4.0'
         pod 'RxBlocking', '4.2.0'
         pod 'AsyncSwift'

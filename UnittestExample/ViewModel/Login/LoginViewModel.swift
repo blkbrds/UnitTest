@@ -9,36 +9,25 @@
 import Foundation
 import MVVM
 
-final class LoginViewModel: ViewModel, Loginable {
+final class LoginViewModel: ViewModel {
 
     // MARK: - Properties
-    var validateError: ((Error?) -> Void)?
-    var validateSuccess: (() -> Void)?
+    var validateWhenValueChanged: (() -> Void)?
 
     var username = "" {
         didSet {
-            do {
-                try validate()
-                validateSuccess?()
-            } catch {
-                validateError?(error)
-            }
+            validateWhenValueChanged?()
         }
     }
 
     var password = "" {
         didSet {
-            do {
-                try validate()
-                validateSuccess?()
-            } catch {
-                validateError?(error)
-            }
+            validateWhenValueChanged?()
         }
     }
 
     // MARK: - Private
-    private func validatePassword() throws {
+    func validatePassword() throws {
 
         if password.trimmed().isEmpty {
             throw PasswordError.empty
@@ -53,7 +42,7 @@ final class LoginViewModel: ViewModel, Loginable {
         }
     }
 
-    private func validateUsername() throws {
+    func validateUsername() throws {
 
         if username.trimmed().isEmpty {
             throw UsernameError.empty
@@ -68,14 +57,9 @@ final class LoginViewModel: ViewModel, Loginable {
         }
     }
 
-    private func validate() throws {
+    // MARK: - Public
+    func validate() throws {
         try validateUsername()
         try validatePassword()
-    }
-
-    func login() {
-        let ud = UserDefaults.standard
-        ud.set(username, forKey: "username")
-        ud.set(password, forKey: "password")
     }
 }
