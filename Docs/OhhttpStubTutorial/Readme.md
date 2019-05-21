@@ -13,14 +13,14 @@ pod 'OHHTTPStubs/Swift', '8.0.0'
 
 ## Cấu trúc
 
-```
+```swift
 stub(<Kiểm tra điều kiện>) { request in
-	return <response trả về>
+    return <response trả về>
 }
 ```
 Ví dụ:
 
-```
+```swift
 stub(condition: isPath("http://www.ios.com")) { _ in
     let stubPath = OHPathForFile("User.json", type(of: self))
     return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
