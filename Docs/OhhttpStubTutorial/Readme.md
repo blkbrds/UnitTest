@@ -76,7 +76,7 @@ OHHTTPStubsResponse(fileAtPath: String, statusCode: Int32, headers: [AnyHashable
 #### 2.2  data
 
 ```swift
-OHHTTPStubsResponse(data: Data, statusCode: Int32, headers: [AnyHashable : Any]?)
+OHHTTPStubsResponse(data: Data, statusCode: Int32, headers: [AnyHashable : Any]?) -> OHHTTPStubsResponse
 ```
 > data: data của fake response
 
