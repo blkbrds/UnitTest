@@ -64,12 +64,12 @@ Sau khi thoả mãn điều kiện ở [1](#Stub-condition), ta tiến hành t�
 #### 2.1: filePath
 
 ```swift
-fixture(filePath: String, status: Int32 = 200, headers: [AnyHashable: Any]?)
+fixture(filePath: String, status: Int32 = 200, headers: [AnyHashable: Any]?) -> OHHTTPStubsResponse
 ```
 hoặc 
 
 ```swift
-OHHTTPStubsResponse(fileAtPath: String, statusCode: Int32, headers: [AnyHashable: Any]?)
+OHHTTPStubsResponse(fileAtPath: String, statusCode: Int32, headers: [AnyHashable: Any]?) -> OHHTTPStubsResponse
 ```
 > filePath: filePath của fake response, nên đặt `filename.json` cho dễ biết
 
@@ -83,20 +83,20 @@ OHHTTPStubsResponse(data: Data, statusCode: Int32, headers: [AnyHashable : Any]?
 #### 2.3 fileURL
 
 ```swift
-OHHTTPStubsResponse(fileURL: URL, statusCode: Int32, headers: [AnyHashable : Any]?)
+OHHTTPStubsResponse(fileURL: URL, statusCode: Int32, headers: [AnyHashable : Any]?) -> OHHTTPStubsResponse
 ```
 > fileURL: fileURL của fake response
 
 #### 2.4 error
 
 ```swift
-OHHTTPStubsResponse(error: Error)
+OHHTTPStubsResponse(error: Error) -> OHHTTPStubsResponse
 ```
 > error: Trả về lỗi mong muốn
 
 #### 2.5 jsonObject
 
 ```swift
-OHHTTPStubsResponse(jsonObject: Any, statusCode: Int32, headers: [AnyHashable : Any]?)
+OHHTTPStubsResponse(jsonObject: Any, statusCode: Int32, headers: [AnyHashable : Any]?) -> OHHTTPStubsResponse
 ```
 > jsonObject: fake response với kiểu Any
