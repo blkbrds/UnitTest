@@ -15,7 +15,7 @@ pod 'OHHTTPStubs/Swift', '8.0.0'
 
 ```
 stub(<Kiểm tra điều kiện>) { request in
-  	return <response trả về>
+	return <response trả về>
 }
 ```
 Ví dụ:
@@ -49,3 +49,10 @@ Kiểm tra điều kiện scheme có phù hợp với scheme của url hay khôn
 
 > Với url: http://wwww.google.com.vn/vanlam?query=124 thì scheme là **http**
 
+#### 1.4 isAbsoluteURLString(_ url: String)
+
+Kiểm tra luôn toàn bộ url có phù hợp hay không.
+
+#### 1.5 isMethod
+
+Bao gồm: isMethodGET(), isMethodPOST(), isMethodPUT(), isMethodPATCH(), isMethodDELETE(), isMethodHEAD(), kiểm tra method của hàm request tương ứng

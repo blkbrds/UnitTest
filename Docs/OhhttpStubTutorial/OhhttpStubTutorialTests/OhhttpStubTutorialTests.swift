@@ -74,12 +74,52 @@ final class OhhttpStubTutorialTests: XCTestCase {
             }
         }
     }
+
+    func testSuccessApiResponseWithAbsoluteURLString() {
+        let manager = Manager<User>()
+        stub(condition: isAbsoluteURLString(Dummy.urlString)) { _ in
+            let stubPath = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success(let user):
+                    XCTAssertEqual(user.name, "vanlam")
+                    XCTAssertEqual(user.age, 29)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                done()
+            }
+        }
+    }
+
+    func testSuccessApiResponseWithPostMethod() {
+        let manager = Manager<User>()
+        stub(condition: isMethodPOST()) { _ in
+            let stubPath = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success(let user):
+                    XCTAssertEqual(user.name, "vanlam")
+                    XCTAssertEqual(user.age, 29)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                done()
+            }
+        }
+    }
 }
 
 extension OhhttpStubTutorialTests {
 
     struct Dummy {
-        static let urlString = "http://wwww.google.com.vn/vanlam?query=124"
+        static let urlString = "http://wwww.google.com.vn/vanlam"
         static let timeout: TimeInterval = 3
     }
 }
