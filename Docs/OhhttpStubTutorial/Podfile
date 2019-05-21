@@ -11,5 +11,6 @@ target 'OhhttpStubTutorial' do
 
   target 'OhhttpStubTutorialTests' do
     inherit! :search_paths
+    pod 'Nimble', '8.0.1'
   end
 end

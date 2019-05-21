@@ -7,13 +7,79 @@
 //
 
 import XCTest
+import OHHTTPStubs
+import Nimble
+
 @testable import OhhttpStubTutorial
 
-class OhhttpStubTutorialTests: XCTestCase {
+final class OhhttpStubTutorialTests: XCTestCase {
 
-    override func setUp() {
+    func testSuccessApiResponseWithScheme() {
+        #warning("isScheme is error currently, please don't use it")
+        let manager = Manager<User>()
+        stub(condition: isScheme("https")) { _ in
+            let stubPath = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success(let user):
+                    XCTAssertEqual(user.name, "vanlam")
+                    XCTAssertEqual(user.age, 29)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                done()
+            }
+        }
     }
 
-    override func tearDown() {
+    func testSuccessApiResponseWithHost() {
+        let manager = Manager<User>()
+        stub(condition: isHost("wwww.google.com.vn")) { _ in
+            let stubPath = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success(let user):
+                    XCTAssertEqual(user.name, "vanlam")
+                    XCTAssertEqual(user.age, 29)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                done()
+            }
+        }
+    }
+
+    func testSuccessApiResponseWithPath() {
+        let manager = Manager<User>()
+        stub(condition: isPath("/vanlam")) { _ in
+            let stubPath = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success(let user):
+                    XCTAssertEqual(user.name, "vanlam")
+                    XCTAssertEqual(user.age, 29)
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+                done()
+            }
+        }
+    }
+}
+
+extension OhhttpStubTutorialTests {
+
+    struct Dummy {
+        static let urlString = "http://wwww.google.com.vn/vanlam?query=124"
+        static let timeout: TimeInterval = 3
     }
 }

@@ -22,7 +22,7 @@ final class ViewController: UIViewController {
 
     private func requestApi() {
         let manager = Manager<User>()
-        stub(condition: isPath("www.ios.com")) { _ in
+        stub(condition: isHost("www.ios.com")) { _ in
             let stubPath = OHPathForFile("User.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
         }

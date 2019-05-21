@@ -18,6 +18,7 @@
 		7E8F22A92293D4B9001A858B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F22A82293D4B9001A858B /* User.swift */; };
 		7E8F22AB2293D508001A858B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F22AA2293D508001A858B /* User.json */; };
 		7E8F22AC2293D51C001A858B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F22AA2293D508001A858B /* User.json */; };
+		7E8F22AE2293D96F001A858B /* Error.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F22AD2293D96F001A858B /* Error.json */; };
 		82DB19DBB0123A159C3E28A1 /* Pods_OhhttpStubTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFF54C7F70BD9624ECEB524 /* Pods_OhhttpStubTutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		7E8F22A522939844001A858B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		7E8F22A82293D4B9001A858B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E8F22AA2293D508001A858B /* User.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		7E8F22AD2293D96F001A858B /* Error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Error.json; sourceTree = "<group>"; };
 		A93D02780B5AC696A3F1419D /* Pods-OhhttpStubTutorialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhhttpStubTutorialTests.release.xcconfig"; path = "Target Support Files/Pods-OhhttpStubTutorialTests/Pods-OhhttpStubTutorialTests.release.xcconfig"; sourceTree = "<group>"; };
 		D84A0D8353A00DB8450BCE7A /* Pods_OhhttpStubTutorialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OhhttpStubTutorialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFF54C7F70BD9624ECEB524 /* Pods_OhhttpStubTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OhhttpStubTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				7E8F22962293928C001A858B /* OhhttpStubTutorialTests.swift */,
 				7E8F22982293928C001A858B /* Info.plist */,
 				7E8F22AA2293D508001A858B /* User.json */,
+				7E8F22AD2293D96F001A858B /* Error.json */,
 			);
 			path = OhhttpStubTutorialTests;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				7E8F228E2293928C001A858B /* Sources */,
 				7E8F228F2293928C001A858B /* Frameworks */,
 				7E8F22902293928C001A858B /* Resources */,
+				3EECD860B935D60263DF1BB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8F22AE2293D96F001A858B /* Error.json in Resources */,
 				7E8F22AB2293D508001A858B /* User.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +295,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EECD860B935D60263DF1BB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OhhttpStubTutorialTests/Pods-OhhttpStubTutorialTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OhhttpStubTutorialTests/Pods-OhhttpStubTutorialTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OhhttpStubTutorialTests/Pods-OhhttpStubTutorialTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		602B09ACF6D50772F5F8FA77 /* [CP] Embed Pods Frameworks */ = {
