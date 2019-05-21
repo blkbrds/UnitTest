@@ -16,11 +16,28 @@ final class Manager<T: Mappable> {
 
     func request(path: String, method: HTTPMethod, completion: @escaping Completion<T>) {
         Alamofire.request(path, method: method, parameters: nil).responseJSON { result in
+            if let error = result.error {
+                completion(.failure(error))
+                return
+            }
             guard let value = result.value as? [String: Any],
                 let user = Mapper<T>().map(JSONObject: value) else {
+                completion(.failure(NSError.json))
                 return
             }
             completion(.success(user))
         }
+    }
+}
+
+extension NSError {
+    static let json = NSError(domain: NSCocoaErrorDomain, code: 9999, userInfo: [NSLocalizedDescriptionKey: "json error"])
+}
+
+extension Error {
+
+    var code: Int {
+        let `self` = self as NSError
+        return `self`.code
     }
 }

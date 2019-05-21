@@ -114,12 +114,31 @@ final class OhhttpStubTutorialTests: XCTestCase {
             }
         }
     }
+
+    func testFailureApiResponseWithError() {
+        let manager = Manager<User>()
+        stub(condition: isMethodPOST()) { _ in
+            return OHHTTPStubsResponse(error: Dummy.error)
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: "http://www.abc.com", method: .post) { result in
+                switch result {
+                case .success:
+                    XCTFail()
+                case .failure(let error):
+                    XCTAssertEqual(error.localizedDescription, "invalid token")
+                }
+                done()
+            }
+        }
+    }
 }
 
 extension OhhttpStubTutorialTests {
 
     struct Dummy {
         static let urlString = "http://wwww.google.com.vn/vanlam"
-        static let timeout: TimeInterval = 3
+        static let timeout: TimeInterval = 20
+        static let error: NSError = NSError(domain: NSCocoaErrorDomain, code: 401, userInfo: [NSLocalizedDescriptionKey: "invalid token"])
     }
 }

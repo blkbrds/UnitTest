@@ -20,7 +20,7 @@ final class ViewController: UIViewController {
         requestApi()
     }
 
-    private func requestApi() {
+    private func requestSuccessApi() {
         let manager = Manager<User>()
         stub(condition: isHost("www.ios.com")) { _ in
             let stubPath = OHPathForFile("User.json", type(of: self))
@@ -36,5 +36,9 @@ final class ViewController: UIViewController {
                 this.errorLabel.text = error.localizedDescription
             }
         }
+    }
+
+    private func requestFailureApi() {
+
     }
 }

@@ -56,3 +56,47 @@ Kiểm tra luôn toàn bộ url có phù hợp hay không.
 #### 1.5 isMethod
 
 Bao gồm: isMethodGET(), isMethodPOST(), isMethodPUT(), isMethodPATCH(), isMethodDELETE(), isMethodHEAD(), kiểm tra method của hàm request tương ứng
+
+### 2. Response trả về
+
+Sau khi thoả mãn điều kiện ở [1](#Stub-condition), ta tiến hành tạo ra response, các func hỗ trợ gồm có:
+
+#### 2.1: filePath
+
+```swift
+fixture(filePath: String, status: Int32 = 200, headers: [AnyHashable: Any]?)
+```
+hoặc 
+
+```swift
+OHHTTPStubsResponse(fileAtPath: String, statusCode: Int32, headers: [AnyHashable: Any]?)
+```
+> filePath: filePath của fake response, nên đặt `filename.json` cho dễ biết
+
+#### 2.2  data
+
+```swift
+OHHTTPStubsResponse(data: Data, statusCode: Int32, headers: [AnyHashable : Any]?)
+```
+> data: data của fake response
+
+#### 2.3 fileURL
+
+```swift
+OHHTTPStubsResponse(fileURL: URL, statusCode: Int32, headers: [AnyHashable : Any]?)
+```
+> fileURL: fileURL của fake response
+
+#### 2.4 error
+
+```swift
+OHHTTPStubsResponse(error: Error)
+```
+> error: Trả về lỗi mong muốn
+
+#### 2.5 jsonObject
+
+```swift
+OHHTTPStubsResponse(jsonObject: Any, statusCode: Int32, headers: [AnyHashable : Any]?)
+```
+> jsonObject: fake response với kiểu Any
