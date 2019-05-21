@@ -1,4 +1,6 @@
 PODS:
+  - Alamofire (4.8.2)
+  - ObjectMapper (3.4.2)
   - OHHTTPStubs/Core (8.0.0)
   - OHHTTPStubs/Default (8.0.0):
     - OHHTTPStubs/Core
@@ -14,15 +16,21 @@ PODS:
     - OHHTTPStubs/Default
 
 DEPENDENCIES:
+  - Alamofire (= 4.8.2)
+  - ObjectMapper (= 3.4.2)
   - OHHTTPStubs/Swift (= 8.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ObjectMapper
     - OHHTTPStubs
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
 
-PODFILE CHECKSUM: 6c94d9ba68a904cddee09543d609107debb8adbf
+PODFILE CHECKSUM: a99ea764e39e1ba09d9acc85c90130a4d7c0a866
 
 COCOAPODS: 1.7.0.beta.3

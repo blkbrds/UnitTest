@@ -6,9 +6,10 @@ target 'OhhttpStubTutorial' do
   use_frameworks!
 
   pod 'OHHTTPStubs/Swift', '8.0.0'
+  pod 'Alamofire', '4.8.2'
+  pod 'ObjectMapper', '3.4.2'
 
   target 'OhhttpStubTutorialTests' do
     inherit! :search_paths
   end
-
 end
