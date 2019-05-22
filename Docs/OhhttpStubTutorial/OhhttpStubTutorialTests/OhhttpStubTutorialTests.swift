@@ -156,6 +156,7 @@ final class OhhttpStubTutorialTests: XCTestCase {
 extension OhhttpStubTutorialTests {
 
     struct Dummy {
+
         static let urlString = "http://wwww.google.com.vn/vanlam"
         static let timeout: TimeInterval = 20
         static let error: NSError = NSError(domain: NSCocoaErrorDomain, code: 500, userInfo: [NSLocalizedDescriptionKey: "server error"])
