@@ -20,7 +20,6 @@ excluded:
   - Carthage
   - Pods
   - vendor
-  - FRCircleTests
 cyclomatic_complexity:
   warning: 18
 line_length: 200

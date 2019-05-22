@@ -38,11 +38,3 @@ extension NSError {
 
     static let json = NSError(domain: NSCocoaErrorDomain, code: 9999, userInfo: [NSLocalizedDescriptionKey: "json error"])
 }
-
-extension Error {
-
-    var code: Int {
-        let `self` = self as NSError
-        return `self`.code
-    }
-}
