@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7C54389B6EF759AFCAE26F0F /* Pods_OhhttpStubTutorialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84A0D8353A00DB8450BCE7A /* Pods_OhhttpStubTutorialTests.framework */; };
+		7E09C7C32294DC3F0029AD23 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09C7C22294DC3F0029AD23 /* ApiError.swift */; };
+		7E09C7C42294E1640029AD23 /* Error.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F22AD2293D96F001A858B /* Error.json */; };
 		7E8F228222939289001A858B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F228122939289001A858B /* AppDelegate.swift */; };
 		7E8F22892293928C001A858B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F22882293928C001A858B /* Assets.xcassets */; };
 		7E8F228C2293928C001A858B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F228A2293928C001A858B /* LaunchScreen.storyboard */; };
@@ -36,6 +38,7 @@
 		06B3351D47CE54F7577E8C36 /* Pods-OhhttpStubTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhhttpStubTutorial.release.xcconfig"; path = "Target Support Files/Pods-OhhttpStubTutorial/Pods-OhhttpStubTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		0AE1997614E3A39C7949B644 /* Pods-OhhttpStubTutorialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhhttpStubTutorialTests.debug.xcconfig"; path = "Target Support Files/Pods-OhhttpStubTutorialTests/Pods-OhhttpStubTutorialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A451601E3A2E97CB6C5775C /* Pods-OhhttpStubTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OhhttpStubTutorial.debug.xcconfig"; path = "Target Support Files/Pods-OhhttpStubTutorial/Pods-OhhttpStubTutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		7E09C7C22294DC3F0029AD23 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		7E8F227E22939289001A858B /* OhhttpStubTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhhttpStubTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8F228122939289001A858B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E8F22882293928C001A858B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7E8F22A82293D4B9001A858B /* User.swift */,
+				7E09C7C22294DC3F0029AD23 /* ApiError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +241,7 @@
 				7E8F22AC2293D51C001A858B /* User.json in Resources */,
 				7E8F228C2293928C001A858B /* LaunchScreen.storyboard in Resources */,
 				7E8F22A4229392B9001A858B /* ViewController.xib in Resources */,
+				7E09C7C42294E1640029AD23 /* Error.json in Resources */,
 				7E8F22892293928C001A858B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +346,7 @@
 				7E8F22A92293D4B9001A858B /* User.swift in Sources */,
 				7E8F22A3229392B9001A858B /* ViewController.swift in Sources */,
 				7E8F228222939289001A858B /* AppDelegate.swift in Sources */,
+				7E09C7C32294DC3F0029AD23 /* ApiError.swift in Sources */,
 				7E8F22A622939844001A858B /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

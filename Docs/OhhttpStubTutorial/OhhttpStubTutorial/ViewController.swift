@@ -17,7 +17,8 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestApi()
+//        requestSuccessApi()
+        requestFailureApi()
     }
 
     private func requestSuccessApi() {
@@ -26,7 +27,7 @@ final class ViewController: UIViewController {
             let stubPath = OHPathForFile("User.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
         }
-        manager.request(path: "www.ios.com", method: .post) { [weak self] result in
+        manager.request(path: "http://www.ios.com", method: .post) { [weak self] result in
             guard let this = self else { return }
             switch result {
             case .success(let user):
@@ -39,6 +40,20 @@ final class ViewController: UIViewController {
     }
 
     private func requestFailureApi() {
-
+        let manager = Manager<User>()
+        stub(condition: isHost("www.ios.com")) { _ in
+            let stubPath = OHPathForFile("Error.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        manager.request(path: "http://www.ios.com", method: .post) { [weak self] result in
+            guard let this = self else { return }
+            switch result {
+            case .success(let user):
+                this.usernameLabel.text = user.name
+                this.ageLabel.text = user.age?.description
+            case .failure(let error):
+                this.errorLabel.text = error.localizedDescription
+            }
+        }
     }
 }

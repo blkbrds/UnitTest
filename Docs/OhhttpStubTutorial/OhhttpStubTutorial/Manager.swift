@@ -20,6 +20,10 @@ final class Manager<T: Mappable> {
                 completion(.failure(error))
                 return
             }
+            if let value = result.value as? [String: Any], let apiError = Mapper<ApiError>().map(JSONObject: value["error"]) {
+                completion(.failure(apiError.error))
+                return
+            }
             guard let value = result.value as? [String: Any],
                 let user = Mapper<T>().map(JSONObject: value) else {
                 completion(.failure(NSError.json))

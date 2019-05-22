@@ -121,12 +121,31 @@ final class OhhttpStubTutorialTests: XCTestCase {
             return OHHTTPStubsResponse(error: Dummy.error)
         }
         waitUntil(timeout: Dummy.timeout) { done in
-            manager.request(path: "http://www.abc.com", method: .post) { result in
+            manager.request(path: Dummy.urlString, method: .post) { result in
                 switch result {
                 case .success:
                     XCTFail()
                 case .failure(let error):
-                    XCTAssertEqual(error.localizedDescription, "invalid token")
+                    XCTAssertEqual(error.localizedDescription, "server error")
+                }
+                done()
+            }
+        }
+    }
+
+    func testFailureApiWithErrorJson() {
+        let manager = Manager<User>()
+        stub(condition: isMethodPOST()) { _ in
+            let stubPath = OHPathForFile("Error.json", type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+        }
+        waitUntil(timeout: Dummy.timeout) { done in
+            manager.request(path: Dummy.urlString, method: .post) { result in
+                switch result {
+                case .success:
+                    XCTFail()
+                case .failure(let error):
+                    XCTAssertEqual(error.localizedDescription, "invalid access token")
                 }
                 done()
             }
@@ -139,6 +158,6 @@ extension OhhttpStubTutorialTests {
     struct Dummy {
         static let urlString = "http://wwww.google.com.vn/vanlam"
         static let timeout: TimeInterval = 20
-        static let error: NSError = NSError(domain: NSCocoaErrorDomain, code: 401, userInfo: [NSLocalizedDescriptionKey: "invalid token"])
+        static let error: NSError = NSError(domain: NSCocoaErrorDomain, code: 500, userInfo: [NSLocalizedDescriptionKey: "server error"])
     }
 }
