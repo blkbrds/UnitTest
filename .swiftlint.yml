@@ -20,6 +20,7 @@ excluded:
   - Carthage
   - Pods
   - vendor
+  - OhhttpStubTutorial
 cyclomatic_complexity:
   warning: 18
 line_length: 200
