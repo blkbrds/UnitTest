@@ -57,6 +57,18 @@ Kiểm tra luôn toàn bộ url có phù hợp hay không.
 
 Bao gồm: isMethodGET(), isMethodPOST(), isMethodPUT(), isMethodPATCH(), isMethodDELETE(), isMethodHEAD(), kiểm tra method của hàm request tương ứng
 
+#### 1.6 Kết hợp stub condition
+
+Sử dụng toán tử **&&** nếu ta muốn kiểm tra phức tạp hơn.
+Ví dụ:
+
+```swift
+stub(condition: isHost("www.google.com") && isPath("\vanlam") && isMethodPOST()) { _ in
+    let stubPath = OHPathForFile("User.json", type(of: self))
+    return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+}
+```
+
 ### 2. Response trả về
 
 Sau khi thoả mãn điều kiện ở [1](#Stub-condition), ta tiến hành tạo ra response, các func hỗ trợ gồm có:
@@ -71,7 +83,8 @@ hoặc
 ```swift
 OHHTTPStubsResponse(fileAtPath: String, statusCode: Int32, headers: [AnyHashable: Any]?) -> OHHTTPStubsResponse
 ```
-> filePath: filePath của fake response, nên đặt `filename.json` cho dễ biết
+> filePath: filePath của fake response, nên đặt `filename.json` cho dễ biết.
+> Library có hỗ trợ hàm OHPathForFile để lấy đường dẫn của file json
 
 #### 2.2  data
 
