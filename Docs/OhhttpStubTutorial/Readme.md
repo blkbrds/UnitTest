@@ -21,11 +21,10 @@ stub(<Kiểm tra điều kiện>) { request in
 Ví dụ:
 
 ```swift
-stub(condition: isPath("http://www.ios.com")) { _ in
+stub(condition: isHost("www.google.com")) { _ in
     let stubPath = OHPathForFile("User.json", type(of: self))
     return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
 }
-
 ```
 
 ## Detail
@@ -63,7 +62,7 @@ Sử dụng toán tử **&&** nếu ta muốn kiểm tra phức tạp hơn.
 Ví dụ:
 
 ```swift
-stub(condition: isHost("www.google.com") && isPath("\vanlam") && isMethodPOST()) { _ in
+stub(condition: isHost("www.google.com") && isPath("/vanlam") && isMethodPOST()) { _ in
     let stubPath = OHPathForFile("User.json", type(of: self))
     return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
 }

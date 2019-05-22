@@ -57,7 +57,4 @@ final class ViewController: UIViewController {
         }
     }
 }
-stub(condition: isHost("www.ios.com") && isMethodPOST() && isPath("vanlam")) { _ in
-    let stubPath = OHPathForFile("User.json", type(of: self))
-    return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
-}
+
