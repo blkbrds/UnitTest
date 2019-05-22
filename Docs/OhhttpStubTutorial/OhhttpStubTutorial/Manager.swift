@@ -35,6 +35,7 @@ final class Manager<T: Mappable> {
 }
 
 extension NSError {
+
     static let json = NSError(domain: NSCocoaErrorDomain, code: 9999, userInfo: [NSLocalizedDescriptionKey: "json error"])
 }
 

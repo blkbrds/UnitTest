@@ -18,8 +18,8 @@ final class OhhttpStubTutorialTests: XCTestCase {
         #warning("isScheme is error currently, please don't use it")
         let manager = Manager<User>()
         stub(condition: isScheme("https")) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
@@ -38,8 +38,8 @@ final class OhhttpStubTutorialTests: XCTestCase {
     func testSuccessApiResponseWithHost() {
         let manager = Manager<User>()
         stub(condition: isHost("wwww.google.com.vn")) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
@@ -58,8 +58,8 @@ final class OhhttpStubTutorialTests: XCTestCase {
     func testSuccessApiResponseWithPath() {
         let manager = Manager<User>()
         stub(condition: isPath("/vanlam")) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
@@ -78,8 +78,8 @@ final class OhhttpStubTutorialTests: XCTestCase {
     func testSuccessApiResponseWithAbsoluteURLString() {
         let manager = Manager<User>()
         stub(condition: isAbsoluteURLString(Dummy.urlString)) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
@@ -98,8 +98,8 @@ final class OhhttpStubTutorialTests: XCTestCase {
     func testSuccessApiResponseWithPostMethod() {
         let manager = Manager<User>()
         stub(condition: isMethodPOST()) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
@@ -124,7 +124,7 @@ final class OhhttpStubTutorialTests: XCTestCase {
             manager.request(path: Dummy.urlString, method: .post) { result in
                 switch result {
                 case .success:
-                    XCTFail()
+                    XCTFail("result should be error")
                 case .failure(let error):
                     XCTAssertEqual(error.localizedDescription, "server error")
                 }
@@ -136,14 +136,14 @@ final class OhhttpStubTutorialTests: XCTestCase {
     func testFailureApiWithErrorJson() {
         let manager = Manager<User>()
         stub(condition: isMethodPOST()) { _ in
-            let stubPath = OHPathForFile("Error.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("Error.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         waitUntil(timeout: Dummy.timeout) { done in
             manager.request(path: Dummy.urlString, method: .post) { result in
                 switch result {
                 case .success:
-                    XCTFail()
+                    XCTFail("result should be error")
                 case .failure(let error):
                     XCTAssertEqual(error.localizedDescription, "invalid access token")
                 }

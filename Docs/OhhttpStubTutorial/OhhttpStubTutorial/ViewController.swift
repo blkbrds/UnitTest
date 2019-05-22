@@ -24,8 +24,8 @@ final class ViewController: UIViewController {
     private func requestSuccessApi() {
         let manager = Manager<User>()
         stub(condition: isHost("www.ios.com") && isMethodPOST()) { _ in
-            let stubPath = OHPathForFile("User.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("User.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         manager.request(path: "http://www.ios.com", method: .post) { [weak self] result in
             guard let this = self else { return }
@@ -42,8 +42,8 @@ final class ViewController: UIViewController {
     private func requestFailureApi() {
         let manager = Manager<User>()
         stub(condition: isHost("www.ios.com") && isMethodPOST()) { _ in
-            let stubPath = OHPathForFile("Error.json", type(of: self))
-            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+            let stubPath: String! = OHPathForFile("Error.json", type(of: self))
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
         manager.request(path: "http://www.ios.com", method: .post) { [weak self] result in
             guard let this = self else { return }
