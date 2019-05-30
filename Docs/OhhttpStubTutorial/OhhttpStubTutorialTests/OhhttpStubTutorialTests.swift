@@ -15,9 +15,8 @@ import Nimble
 final class OhhttpStubTutorialTests: XCTestCase {
 
     func testSuccessApiResponseWithScheme() {
-        #warning("isScheme is error currently, please don't use it")
         let manager = Manager<User>()
-        stub(condition: isScheme("https")) { _ in
+        stub(condition: isScheme("http")) { _ in
             let stubPath: String! = OHPathForFile("User.json", type(of: self))
             return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
         }
@@ -150,6 +149,11 @@ final class OhhttpStubTutorialTests: XCTestCase {
                 done()
             }
         }
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        OHHTTPStubs.removeAllStubs()
     }
 }
 

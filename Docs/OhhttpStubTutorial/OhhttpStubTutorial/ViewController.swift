@@ -43,7 +43,7 @@ final class ViewController: UIViewController {
         let manager = Manager<User>()
         stub(condition: isHost("www.ios.com") && isMethodPOST()) { _ in
             let stubPath: String! = OHPathForFile("Error.json", type(of: self))
-            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"])
+            return fixture(filePath: stubPath, headers: ["Content-Type": "application/json"]).requestTime(1.0, responseTime: 2.0)
         }
         manager.request(path: "http://www.ios.com", method: .post) { [weak self] result in
             guard let this = self else { return }

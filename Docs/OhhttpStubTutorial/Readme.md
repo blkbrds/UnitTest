@@ -44,7 +44,7 @@ Kiểm tra điều kiện path có phù hợp với path của url hay không.
 
 #### 1.3. isScheme(_ scheme: String) 
 
-Kiểm tra điều kiện scheme có phù hợp với scheme của url hay không. Xin đừng sử dụng *isScheme* vì nó đang bị bug, không phân biệt được **http** và **https**.
+Kiểm tra điều kiện scheme có phù hợp với scheme của url hay không.
 
 > Với url: http://wwww.google.com.vn/vanlam?query=124 thì scheme là **http**
 
@@ -112,3 +112,14 @@ OHHTTPStubsResponse(error: Error) -> OHHTTPStubsResponse
 OHHTTPStubsResponse(jsonObject: Any, statusCode: Int32, headers: [AnyHashable : Any]?) -> OHHTTPStubsResponse
 ```
 > jsonObject: fake response với kiểu Any.
+
+#### 2.6. Fake request time và response time
+
+Tại đối tuợng OHHTTPStubsResponse, ta sử dụng hàm sau để thiết lập thời gian request và response.
+
+```swift
+stub(condition: isHost("www.google.com")) { _ in
+    let stubPath = OHPathForFile("User.json", type(of: self))
+    return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"]).requestTime(1.0, responseTime: 2.0)
+}
+```
