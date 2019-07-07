@@ -10,7 +10,7 @@ before_install:
   - gem install bundler
   - bundle install
   - bundle exec pod install
-xcode_project: UnitTestExample.xcodeproj # path to your xcodeproj folder
+# xcode_project: UnitTestExample.xcodeproj # path to your xcodeproj folder
 xcode_scheme: UnitTestExample
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
 script: 
