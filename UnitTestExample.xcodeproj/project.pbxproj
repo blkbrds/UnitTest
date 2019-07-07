@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3ADB831F849E9132DA5F086E /* Pods_UnitTestExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A256812B4B36B07940695FCB /* Pods_UnitTestExample.framework */; };
+		7E07CCB522D1ED4B000C9C40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07CCB322D1ED4B000C9C40 /* ViewController.swift */; };
+		7E07CCB622D1ED4B000C9C40 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E07CCB422D1ED4B000C9C40 /* ViewController.xib */; };
 		7EB11D1122D185E300229D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB11D1022D185E300229D38 /* AppDelegate.swift */; };
-		7EB11D1522D185E300229D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB11D1422D185E300229D38 /* ViewController.swift */; };
-		7EB11D1822D185E300229D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB11D1622D185E300229D38 /* Main.storyboard */; };
 		7EB11D1A22D185EA00229D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB11D1922D185EA00229D38 /* Assets.xcassets */; };
 		7EB11D1D22D185EA00229D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB11D1B22D185EA00229D38 /* LaunchScreen.storyboard */; };
 		7EB11D2822D185EA00229D38 /* UnitTestExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB11D2722D185EA00229D38 /* UnitTestExampleTests.swift */; };
@@ -33,10 +33,10 @@
 		50EB7A1652CA502A95EDB8A5 /* Pods-UnitTestExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestExampleTests.release.xcconfig"; path = "Target Support Files/Pods-UnitTestExampleTests/Pods-UnitTestExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		56EFB60A47062FB5CC489CCE /* Pods_UnitTestExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTestExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2F77D17F743DD327570288 /* Pods-UnitTestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestExample.debug.xcconfig"; path = "Target Support Files/Pods-UnitTestExample/Pods-UnitTestExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7E07CCB322D1ED4B000C9C40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E07CCB422D1ED4B000C9C40 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		7EB11D0D22D185E300229D38 /* UnitTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB11D1022D185E300229D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7EB11D1422D185E300229D38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7EB11D1722D185E300229D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EB11D1922D185EA00229D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EB11D1C22D185EA00229D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EB11D1E22D185EA00229D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,11 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				7EB11D1022D185E300229D38 /* AppDelegate.swift */,
-				7EB11D1422D185E300229D38 /* ViewController.swift */,
-				7EB11D1622D185E300229D38 /* Main.storyboard */,
 				7EB11D1922D185EA00229D38 /* Assets.xcassets */,
 				7EB11D1B22D185EA00229D38 /* LaunchScreen.storyboard */,
 				7EB11D1E22D185EA00229D38 /* Info.plist */,
+				7E07CCB322D1ED4B000C9C40 /* ViewController.swift */,
+				7E07CCB422D1ED4B000C9C40 /* ViewController.xib */,
 			);
 			path = UnitTestExample;
 			sourceTree = "<group>";
@@ -136,6 +136,7 @@
 			buildConfigurationList = 7EB11D2C22D185EA00229D38 /* Build configuration list for PBXNativeTarget "UnitTestExample" */;
 			buildPhases = (
 				F2B2A9936E45652EB546EF76 /* [CP] Check Pods Manifest.lock */,
+				7E07CCB222D1EBB4000C9C40 /* Swiftlint */,
 				7EB11D0922D185E300229D38 /* Sources */,
 				7EB11D0A22D185E300229D38 /* Frameworks */,
 				7EB11D0B22D185E300229D38 /* Resources */,
@@ -212,8 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB11D1D22D185EA00229D38 /* LaunchScreen.storyboard in Resources */,
+				7E07CCB622D1ED4B000C9C40 /* ViewController.xib in Resources */,
 				7EB11D1A22D185EA00229D38 /* Assets.xcassets in Resources */,
-				7EB11D1822D185E300229D38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +250,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E07CCB222D1EBB4000C9C40 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		F2B2A9936E45652EB546EF76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EB11D1522D185E300229D38 /* ViewController.swift in Sources */,
+				7E07CCB522D1ED4B000C9C40 /* ViewController.swift in Sources */,
 				7EB11D1122D185E300229D38 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7EB11D1622D185E300229D38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7EB11D1722D185E300229D38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7EB11D1B22D185EA00229D38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
