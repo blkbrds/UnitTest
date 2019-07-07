@@ -1,3 +1,6 @@
-language: ruby
+language: objective-c
 rvm:
   - 2.6.3
+xcode_project: UnitTestExample.xcodeproj # path to your xcodeproj folder
+xcode_scheme: UnitTestExampleTests
+xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
