@@ -137,7 +137,7 @@
 			buildPhases = (
 				F2B2A9936E45652EB546EF76 /* [CP] Check Pods Manifest.lock */,
 				7E07CCB222D1EBB4000C9C40 /* Swiftlint */,
-				7E07CCB722D2460A000C9C40 /* Linterbot */,
+				7E07CCB722D2460A000C9C40 /* linter */,
 				7EB11D0922D185E300229D38 /* Sources */,
 				7EB11D0A22D185E300229D38 /* Frameworks */,
 				7EB11D0B22D185E300229D38 /* Resources */,
@@ -269,7 +269,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		7E07CCB722D2460A000C9C40 /* Linterbot */ = {
+		7E07CCB722D2460A000C9C40 /* linter */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,7 +278,7 @@
 			);
 			inputPaths = (
 			);
-			name = Linterbot;
+			name = linter;
 			outputFileListPaths = (
 			);
 			outputPaths = (
