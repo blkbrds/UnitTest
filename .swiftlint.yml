@@ -1,5 +1,5 @@
 disabled_rules: # rule identifiers to exclude from running
-  - colon
+  # - colon
   - comma
   - control_statement
 opt_in_rules: # some rules are only opt-in
