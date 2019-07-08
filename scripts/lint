@@ -1,7 +1,9 @@
 #!/bin/bash
 
+./Pods/SwiftLint/swiftlint lint --reporter json > swiftlint-report.json || false
+
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]
+    echo 'Not in a pull request, skip report'
 then
-swiftlint --reporter json > swiftlint-report.json || false
-linterbot $TRAVIS_REPO_SLUG $TRAVIS_PULL_REQUEST < swiftlint-report.json
+  bundle exec linterbot $TRAVIS_REPO_SLUG $TRAVIS_PULL_REQUEST < swiftlint-report.json
 fi
