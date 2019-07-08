@@ -1,14 +1,18 @@
-language: objective-c
-osx_image: xcode9.4
+osx_image: xcode10.2
+language: swift
+rvm:
+  - 2.6.3
+before_install:
+  - gem update --system
+  - gem install bundler
+  - bundle install
+  - bundle exec pod install --repo-update
+  - gem install linterbot
+  - brew install swiftlint
 cache:
   - bundler
   - cocoapods
-install:
-  - set -o pipefail
-  - sudo systemsetup -settimezone Asia/Ho_Chi_Minh
-  - bundle install --path=vendor/bundle --jobs 4 --retry 3
-script:
-  - ./scripts/branch
-  - bundle exec pod install --repo-update
-  - ./scripts/lint 
-  - bundle exec fastlane test  
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
+script: 
+  - ./scripts/lint
+  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme UnitTestExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
