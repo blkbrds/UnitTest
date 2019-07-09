@@ -15,11 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configWindow()
-        #if DEBUG
-        fatalError()
-        #else
         return true
-        #endif
     }
 
     private func configWindow() {
