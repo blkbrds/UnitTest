@@ -1,4 +1,5 @@
 default_platform(:ios)
+xcversion(version: "10.2.1")
 
 platform :ios do
   lane :dev do
