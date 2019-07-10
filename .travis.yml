@@ -2,6 +2,8 @@ osx_image: xcode10.2
 language: swift
 rvm:
   - 2.6.3
+git:
+  depth: false
 before_install:
   - gem update --system
   - gem install bundler
