@@ -1,0 +1,14 @@
+//
+//  Prod.xcconfig
+//  UnitTestExample
+//
+//  Created by Lam Le V. on 7/9/19.
+//  Copyright © 2019 Lam Le V. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = DEV_Prod
+
+BUNDLE_IDENTIFIER = com.lamle.dev.buildappsetting.prod

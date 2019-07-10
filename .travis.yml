@@ -13,6 +13,11 @@ cache:
   - bundler
   - cocoapods
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
+before_script:
+  - chmod +x ./scripts/add-key.sh
+  - sh ./scripts/add-key.sh
 script: 
   - ./scripts/lint
-  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme UnitTestExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - if [[ "$TRAVIS_BRANCH" == "develop" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane dev; fi
+  - if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane prod; fi
+
