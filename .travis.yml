@@ -9,10 +9,12 @@ before_install:
   - bundle exec pod install --repo-update
   - gem install linterbot
   - brew install swiftlint
+install:
+  - bundle exec fastlane test
 cache:
   - bundler
   - cocoapods
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
 script: 
   - ./scripts/lint
-  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Prod -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Dev -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
