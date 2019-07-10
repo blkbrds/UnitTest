@@ -20,4 +20,4 @@ security import ./Cers/dev.p12 -k ~/Library/Keychains/ios-build.keychain -P 1234
 
 # Put the provisioning profile in place
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp "./scripts/profile/provisioning_app_buildapp_testing_new.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+cp "./Cers/provisioning_app_buildapp_testing_new.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
