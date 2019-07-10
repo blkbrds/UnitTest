@@ -19,4 +19,4 @@ before_script:
 script: 
   - ./scripts/lint
   - bundle exec fastlane dev
-  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Dev -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  # - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Dev -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
