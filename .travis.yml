@@ -18,6 +18,5 @@ before_script:
   - sh ./scripts/add-key.sh
 script: 
   - ./scripts/lint
-  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Dev -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-install:
   - bundle exec fastlane dev
+  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme Dev -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
