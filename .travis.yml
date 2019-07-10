@@ -18,6 +18,6 @@ before_script:
   - sh ./scripts/add-key.sh
 script: 
   - ./scripts/lint
-  - if [[ "$TRAVIS_BRANCH" == "practice_travis_ci_fast_lane" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane dev; fi
+  - if [[ "$TRAVIS_BRANCH" == "practice_travis_ci_fast_lane"]]; then bundle exec fastlane dev; fi
   - if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane prod; fi
 
