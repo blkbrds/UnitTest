@@ -1,10 +1,29 @@
-setup_travis
-
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :test do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :dev do
+    build_app(
+      scheme: "Dev",
+      export_method: "development",
+      output_name: "UnitTestProject-Dev.ipa",
+      export_options: {
+        provisioningProfiles: { 
+          "com.lamle.dev.buildappsetting": "provisioning_app_buildapp_testing_new"
+        }
+      }
+    )
+  end
+
+  lane :prod do
+    build_app(
+      scheme: "Prod",
+      export_method: "ad-hoc",
+      output_name: "UnitTestProject-Prod.ipa",
+      export_options: {
+        provisioningProfiles: { 
+          "com.lamle.dev.buildappsetting.prod": "provisioning_app_buildapp_testing_prod"
+        }
+      }
+    )
   end
 end

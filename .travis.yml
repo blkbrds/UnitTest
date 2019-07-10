@@ -10,7 +10,7 @@ before_install:
   - gem install linterbot
   - brew install swiftlint
 install:
-  - bundle exec fastlane test
+  - bundle exec fastlane dev
 cache:
   - bundler
   - cocoapods
