@@ -1,13 +1,29 @@
-default_platform :ios
+default_platform(:ios)
 
 platform :ios do
-  before_all do
-    setup_circle_ci
+  lane :dev do
+    build_app(
+      scheme: "Dev",
+      export_method: "development",
+      output_name: "UnitTestProject-Dev.ipa",
+      export_options: {
+        provisioningProfiles: { 
+          "com.lamle.dev.buildappsetting": "provisioning_app_buildapp_testing_new"
+        }
+      }
+    )
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  lane :prod do
+    build_app(
+      scheme: "Prod",
+      export_method: "ad-hoc",
+      output_name: "UnitTestProject-Prod.ipa",
+      export_options: {
+        provisioningProfiles: { 
+          "com.lamle.dev.buildappsetting.prod": "provisioning_app_buildapp_testing_prod"
+        }
+      }
+    )
   end
 end
-

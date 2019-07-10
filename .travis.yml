@@ -1,14 +1,23 @@
-language: objective-c
-osx_image: xcode9.4
+osx_image: xcode10.2
+language: swift
+rvm:
+  - 2.6.3
+before_install:
+  - gem update --system
+  - gem install bundler
+  - bundle install
+  - bundle exec pod install --repo-update
+  - gem install linterbot
+  - brew install swiftlint
 cache:
   - bundler
   - cocoapods
-install:
-  - set -o pipefail
-  - sudo systemsetup -settimezone Asia/Ho_Chi_Minh
-  - bundle install --path=vendor/bundle --jobs 4 --retry 3
-script:
-  - ./scripts/branch
-  - bundle exec pod install --repo-update
-  - ./scripts/lint 
-  - bundle exec fastlane test  
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
+before_script:
+  - chmod +x ./scripts/add-key.sh
+  - sh ./scripts/add-key.sh
+script: 
+  - ./scripts/lint
+  - if [[ "$TRAVIS_BRANCH" == "develop" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane dev; fi
+  - if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then bundle exec fastlane prod; fi
+
