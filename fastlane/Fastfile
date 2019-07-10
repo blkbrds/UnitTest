@@ -2,10 +2,6 @@ default_platform(:ios)
 
 platform :ios do
   lane :dev do
-    config_cer_provision(
-      profile: "./Cers/provisioning_app_buildapp_testing_new.mobileprovision",
-    )
-
     build_app(
       scheme: "Dev",
       export_method: "development",
