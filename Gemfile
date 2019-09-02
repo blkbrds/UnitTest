@@ -12,4 +12,4 @@ gem 'xcpretty', '0.3.0'
 gem 'linterbot', '0.2.7'
 
 
-gem "fastlane", '2.129.0'
+gem "fastlane", '2.130.0'
