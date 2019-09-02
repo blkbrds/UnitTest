@@ -14,8 +14,8 @@ before_install:
   - brew install swiftlint
   - bundle exec fastlane test
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
-script: 
-  - ./scripts/lint
+before_script:
   - chmod +x ./scripts/add-key.sh
   - sh ./scripts/add-key.sh
-  - xcodebuild -workspace UnitTestExample.xcworkspace -scheme UnitTestExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script:
+  - bundle exec fastlane test
