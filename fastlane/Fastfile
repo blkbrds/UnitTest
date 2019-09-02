@@ -1,23 +1,10 @@
 lane :test do
 
-  keychain_name = "ios-build.keychain"
-  keychain_password = "12345678"
-
-  create_keychain(
-    name: keychain_name,
-    password: keychain_password,
-    default_keychain: true,
-    unlock: true,
-    timeout: 3600,
-    add_to_search_list: true
-  )
-
   import_certificate(
-    certificate_path: "Cers/Dev.p12",
-    certificate_password: ENV["CERTIFICATE_DEV_PASSWORD"] || "default", 
-    keychain_name: keychain_name,
-    keychain_password: keychain_password,
-    profile: "./Cers/Fastlane_dev.mobileprovision",
+    keychain_name: "ios-build.keychain",
+    keychain_password: "travis",
+    certificate_path: "./Cers/dev.p12",
+    certificate_password: ENV["CERTIFICATE_DEV_PASSWORD"]
   )
 
   build_app(
