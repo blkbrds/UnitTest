@@ -2,9 +2,9 @@ lane :test do
 
   import_certificate(
     keychain_name: "ios-build.keychain",
-    keychain_password: "travis",
+    keychain_password: "12345678",
     certificate_path: "./Cers/dev.p12",
-    certificate_password: ENV["CERTIFICATE_DEV_PASSWORD"]
+    certificate_password: "12345678"
   )
 
   build_app(
