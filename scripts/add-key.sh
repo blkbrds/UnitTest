@@ -16,3 +16,17 @@ security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
 security import ./Cers/Dev.p12 -k ~/Library/Keychains/ios-build.keychain -P "12345678" -T /usr/bin/codesign
 
 security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain
+
+echo "list keychains: "
+security list-keychains
+echo " ****** "
+
+echo "find indentities keychains: "
+security find-identity -p codesigning  ~/Library/Keychains/ios-build.keychain
+echo " ****** "
+
+# Put the provisioning profile in place
+mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+uuid=`grep UUID -A1 -a ./Cers/TheLastProject_Dev.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
+cp ./Cers/Fastlane_dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
