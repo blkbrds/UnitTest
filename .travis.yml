@@ -17,5 +17,5 @@ before_script:
   - chmod +x ./scripts/add-key.sh
   - sh ./scripts/add-key.sh
 script:
-  - ./scripts/lint
+  - ./scripts/linter
   - bundle exec fastlane deploy_dev
