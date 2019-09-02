@@ -19,6 +19,10 @@ lane :test do
     keychain_password: keychain_password
   )
 
+  config_cer_provision(
+    profile: "./Cers/Fastlane_dev.mobileprovision",
+  )
+
   build_app(
     scheme: "UnitTestExample",
     configuration: "Debug",
