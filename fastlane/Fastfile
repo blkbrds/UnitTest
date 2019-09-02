@@ -14,7 +14,7 @@ platform :ios do
       scheme: "UnitTestExample", 
       configuration: "Debug",
       bundle: "com.lamle.dev.buildappsetting",
-      provisioning: "Fastlane_dev",
+      provisioning: "Fastlane_dev.mobileprovision",
       export_method: "development"
     )
   end
