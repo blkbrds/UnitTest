@@ -4,20 +4,26 @@ lane :test do
     keychain_name: "ios-build.keychain",
     keychain_password: "12345678",
     certificate_path: "./Cers/dev.p12",
-    certificate_password: "12345678"
+    certificate_password: "12345678",
+  )
+
+  update_project_provisioning(
+    xcodeproj: "UnitTestExample.xcodeproj",
+    profile: "./Cers/Fastlane_dev.mobileprovision",
+    target_filter: "UnitTestExample",
   )
 
   build_app(
     scheme: "UnitTestExample",
-    configuration: "Debug",
     clean: true,
     output_directory: "ipa/dev",
     output_name: "UnitTest.ipa",
     skip_profile_detection: true,
+    configuration: "Debug",
     silent: true,
     export_method: "development",
-    export_options: {
-      provisioningProfiles: { "com.lamle.dev.buildappsetting": "Fastlane_dev" }
-    }
+    # export_options: {
+    #   provisioningProfiles: { "com.lamle.dev.buildappsetting": "Fastlane_dev" }
+    # }
   )
 end
