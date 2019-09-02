@@ -12,7 +12,6 @@ before_install:
   - bundle exec pod install --repo-update
   - gem install linterbot
   - brew install swiftlint
-  - bundle exec fastlane action create_keychain
   - bundle exec fastlane test
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8
 script: 
