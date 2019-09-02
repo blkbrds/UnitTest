@@ -1,7 +1,7 @@
 lane :test do
 
   keychain_name = "ios-build.keychain"
-  keychain_password = 12345678
+  keychain_password = "12345678"
 
   create_keychain(
     name: keychain_name,
