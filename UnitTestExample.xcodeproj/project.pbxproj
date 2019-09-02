@@ -473,18 +473,18 @@
 			baseConfigurationReference = 4426970FA488C3F1999D0EB7 /* Pods-UnitTestExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Duy Tran (MDVP4938PX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tien Le (QG598U658S)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MDVP4938PX;
+				DEVELOPMENT_TEAM = QG598U658S;
 				INFOPLIST_FILE = UnitTestExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lamle.dev.buildappsetting.inhouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.thelastproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Fastlane-inhouse";
+				PROVISIONING_PROFILE_SPECIFIER = TheLastProject_AdHoc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

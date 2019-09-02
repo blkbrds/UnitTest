@@ -7,12 +7,6 @@ lane :test do
     certificate_password: "12345678",
   )
 
-  update_project_provisioning(
-    xcodeproj: "UnitTestExample.xcodeproj",
-    profile: "./Cers/Fastlane_dev.mobileprovision",
-    target_filter: "UnitTestExample",
-  )
-
   build_app(
     scheme: "UnitTestExample",
     clean: true,
@@ -22,8 +16,8 @@ lane :test do
     configuration: "Debug",
     silent: true,
     export_method: "development",
-    # export_options: {
-    #   provisioningProfiles: { "com.lamle.dev.buildappsetting": "Fastlane_dev" }
-    # }
+    export_options: {
+      provisioningProfiles: { "com.lamle.dev.buildappsetting": "Fastlane_dev" }
+    }
   )
 end
