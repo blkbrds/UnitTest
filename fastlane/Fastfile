@@ -1,23 +1,58 @@
-lane :test do
+default_platform(:ios)
 
-  import_certificate(
-    keychain_name: "ios-build.keychain",
-    keychain_password: "12345678",
-    certificate_path: "./Cers/dev.p12",
-    certificate_password: "12345678",
-  )
+platform :ios do
 
-  build_app(
-    scheme: "UnitTestExample",
-    clean: true,
-    output_directory: "ipa/dev",
-    output_name: "UnitTest.ipa",
-    skip_profile_detection: true,
-    configuration: "Debug",
-    silent: true,
-    export_method: "development",
-    export_options: {
-      provisioningProfiles: { "com.lamle.dev.buildappsetting": "Fastlane_dev" }
-    }
-  )
+  desc "test build dev"
+  lane :deploy_dev do
+    config_cer_provision(
+      certificate_path: "./Cers/dev.p12",
+      profile: "./Cers/Fastlane_dev.mobileprovision",
+      build_configuration: "Debug"
+    )
+
+    build_app_with(
+      scheme: "UnitTestExample", 
+      configuration: "Debug",
+      bundle: "com.lamle.dev.buildappsetting",
+      provisioning: "Fastlane_dev",
+      export_method: "development"
+    )
+  end
+
+  desc "Build app with options"
+  private_lane :build_app_with do |options|
+    build_app(
+      scheme: "#{options[:scheme]}",
+      configuration: "#{options[:configuration]}",
+      clean: true,
+      output_name: "Unittest.ipa",
+      skip_profile_detection: true,
+      export_method: "#{options[:export_method]}",
+      export_options: {
+        provisioningProfiles: { "#{options[:bundle]}": "#{options[:provisioning]}" }
+      }
+    )
+  end
+
+  desc "Import certificate"
+  private_lane :config_cer_provision do |options|
+    import_certificate(
+      keychain_name: "ios-build.keychain",
+      keychain_password: "travis",
+      certificate_path: "#{options[:certificate_path]}",
+      certificate_password: "12345678"
+    )
+
+    update_project_provisioning(
+      xcodeproj: "UnitTestExample.xcodeproj",
+      profile: "#{options[:profile]}",
+      target_filter: "UnitTestExample",
+      build_configuration: "#{options[:build_configuration]}"
+    )
+
+    update_project_team(
+      path: "UnitTestExample.xcodeproj",
+      teamid: ENV["TEAM_ID"]
+    )
+  end
 end

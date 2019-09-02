@@ -19,4 +19,4 @@ before_script:
   - sh ./scripts/add-key.sh
 script:
   - ./scripts/linter
-  - bundle exec fastlane test
+  - bundle exec fastlane deploy_dev
