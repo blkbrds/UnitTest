@@ -1,3 +1,4 @@
+
 default_platform(:ios)
 
 platform :ios do
@@ -14,7 +15,7 @@ platform :ios do
       scheme: "UnitTestExample", 
       configuration: "Debug",
       bundle: "com.lamle.dev.buildappsetting",
-      provisioning: "Fastlane_dev.mobileprovision",
+      provisioning: "Fastlane_dev",
       export_method: "development"
     )
   end

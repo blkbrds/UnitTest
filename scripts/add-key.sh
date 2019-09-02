@@ -10,11 +10,11 @@ security unlock-keychain -p travis ios-build.keychain
 security set-keychain-settings -t 3600 -u ios-build.keychain
 
 # Add certificates to keychain and allow codesign to access them
-security import ./scripts/certs/dis.cer -k ios-build.keychain -T /usr/bin/codesign
-security import ./scripts/certs/dev.cer -k ios-build.keychain -T /usr/bin/codesign
+security import ./Cers/dis.cer -k ios-build.keychain -T /usr/bin/codesign
+security import ./Cers/dev.cer -k ios-build.keychain -T /usr/bin/codesign
 
-security import ./scripts/certs/dis.p12 -k ios-build.keychain -P 12345678  -T /usr/bin/codesign
-security import ./scripts/certs/dev.p12 -k ios-build.keychain -P 12345678  -T /usr/bin/codesign
+security import ./Cers/dis.p12 -k ios-build.keychain -P 12345678  -T /usr/bin/codesign
+security import ./Cers/dev.p12 -k ios-build.keychain -P 12345678  -T /usr/bin/codesign
 
 security set-key-partition-list -S apple-tool:,apple: -s -k travis ~/Library/Keychains/ios-build.keychain
 
@@ -30,10 +30,10 @@ echo " ****** "
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
 uuid=`grep UUID -A1 -a ./scripts/profiles/Fastlane_dev.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
-cp ./scripts/profiles/Fastlane_dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+cp ./Cers/Fastlane_dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
 uuid=`grep UUID -A1 -a ./scripts/profiles/TheLastProject_AdHoc.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
-cp ./scripts/profiles/TheLastProject_AdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+cp ./Cers/TheLastProject_AdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
 #cp ./scripts/profiles/TheLastProject_Dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 #cp ./scripts/profiles/TheLastProject_AdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
