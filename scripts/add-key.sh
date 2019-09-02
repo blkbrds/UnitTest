@@ -29,10 +29,10 @@ echo " ****** "
 # Put the provisioning profile in place
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
-uuid=`grep UUID -A1 -a ./scripts/profiles/Fastlane_dev.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
+uuid=`grep UUID -A1 -a ./Cers/Fastlane_dev.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
 cp ./Cers/Fastlane_dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
-uuid=`grep UUID -A1 -a ./scripts/profiles/TheLastProject_AdHoc.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
+uuid=`grep UUID -A1 -a ./Cers/TheLastProject_AdHoc.mobileprovision | grep -io "[-A-F0-9]\{36\}"`
 cp ./Cers/TheLastProject_AdHoc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
 #cp ./scripts/profiles/TheLastProject_Dev.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
