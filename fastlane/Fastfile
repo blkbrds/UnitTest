@@ -1,7 +1,7 @@
 lane :test do
   import_certificate(
     certificate_path: "Cers/Dev.p12",
-    certificate_password: "12345678"
+    certificate_password: ENV["CERTIFICATE_DEV_PASSWORD"] || "default"
   )
   build_app(
     scheme: "UnitTestExample",
