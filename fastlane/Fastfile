@@ -4,7 +4,7 @@ default_platform(:ios)
 platform :ios do
 
   desc "test build dev"
-  lane :deploy_dev do
+  lane :dev do
     config_cer_provision(
       certificate_path: "./Cers/dev.p12",
       profile: "./Cers/Fastlane_dev.mobileprovision",
@@ -17,6 +17,23 @@ platform :ios do
       bundle: "com.lamle.dev.buildappsetting",
       provisioning: "Fastlane_dev",
       export_method: "development"
+    )
+  end
+
+  desc "test build staging"
+  lane :staging do
+    config_cer_provision(
+      certificate_path: "./Cers/dis.p12",
+      profile: "./Cers/TheLastProject_AdHoc.mobileprovision",
+      build_configuration: "Release"
+    )
+
+    build_app_with(
+      scheme: "UnitTestExample", 
+      configuration: "Release",
+      bundle: "com.fx.thelastproject",
+      provisioning: "TheLastProject_AdHoc",
+      export_method: "ad-hoc"
     )
   end
 
@@ -49,11 +66,6 @@ platform :ios do
       profile: "#{options[:profile]}",
       target_filter: "UnitTestExample",
       build_configuration: "#{options[:build_configuration]}"
-    )
-
-    update_project_team(
-      path: "UnitTestExample.xcodeproj",
-      teamid: ENV["TEAM_ID"]
     )
   end
 end
