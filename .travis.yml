@@ -21,4 +21,4 @@ before_script:
   - sh ./scripts/add-key.sh
 script:
   - ./scripts/lint
-  - bundle exec fastlane staging
+  # - bundle exec fastlane staging
