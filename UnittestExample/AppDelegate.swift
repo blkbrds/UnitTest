@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        configWindow()
-        return true
-    }
+     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+          configWindow()
+          SessionManager.default.request("").response { response in
 
-    private func configWindow() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        guard let window = window else { return }
-        window.rootViewController = ViewController()
-        window.makeKeyAndVisible()
-    }
+          }
+          return true
+     }
+
+     private func configWindow() {
+          window = UIWindow(frame: UIScreen.main.bounds)
+          guard let window = window else { return }
+          window.rootViewController = ViewController()
+          window.makeKeyAndVisible()
+     }
 }
