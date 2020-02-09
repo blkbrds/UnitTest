@@ -5,6 +5,7 @@ rvm:
 cache:
   directories:
     - /home/travis/.rvm/
+cache:
   - bundler
   - cocoapods
 before_install:
