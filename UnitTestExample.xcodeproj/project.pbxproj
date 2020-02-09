@@ -11,6 +11,8 @@
 		7E07CCB522D1ED4B000C9C40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07CCB322D1ED4B000C9C40 /* ViewController.swift */; };
 		7E07CCB622D1ED4B000C9C40 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E07CCB422D1ED4B000C9C40 /* ViewController.xib */; };
 		7E760E352324DD1900E11703 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E760E342324DD1900E11703 /* GoogleService-Info.plist */; };
+		7E9AE01323F063F300A08F52 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AE01123F063F200A08F52 /* Alamofire.framework */; };
+		7E9AE01523F063F300A08F52 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AE01223F063F200A08F52 /* AlamofireImage.framework */; };
 		7EB11D1122D185E300229D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB11D1022D185E300229D38 /* AppDelegate.swift */; };
 		7EB11D1A22D185EA00229D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB11D1922D185EA00229D38 /* Assets.xcassets */; };
 		7EB11D1D22D185EA00229D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EB11D1B22D185EA00229D38 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,8 @@
 		7E07CCB322D1ED4B000C9C40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E07CCB422D1ED4B000C9C40 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		7E760E342324DD1900E11703 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "UnittestExample/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		7E9AE01123F063F200A08F52 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7E9AE01223F063F200A08F52 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		7EB11D0D22D185E300229D38 /* UnitTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB11D1022D185E300229D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB11D1922D185EA00229D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9AE01523F063F300A08F52 /* AlamofireImage.framework in Frameworks */,
 				3ADB831F849E9132DA5F086E /* Pods_UnitTestExample.framework in Frameworks */,
+				7E9AE01323F063F300A08F52 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +88,8 @@
 		6A89DF58CC3CB3FB5A694364 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E9AE01123F063F200A08F52 /* Alamofire.framework */,
+				7E9AE01223F063F200A08F52 /* AlamofireImage.framework */,
 				A256812B4B36B07940695FCB /* Pods_UnitTestExample.framework */,
 				56EFB60A47062FB5CC489CCE /* Pods_UnitTestExampleTests.framework */,
 			);
@@ -144,6 +152,7 @@
 				7EB11D0922D185E300229D38 /* Sources */,
 				7EB11D0A22D185E300229D38 /* Frameworks */,
 				7EB11D0B22D185E300229D38 /* Resources */,
+				7E9AE01823F0642B00A08F52 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -272,6 +281,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		7E9AE01823F0642B00A08F52 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		F2B2A9936E45652EB546EF76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -458,17 +487,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Duy Tran (7L3VQ3G4FA)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MDVP4938PX;
+				DEVELOPMENT_TEAM = QG598U658S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UnitTestExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lamle.dev.buildappsetting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.thelastproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0634f7cc-5128-4e8c-b514-029a34b948a4";
-				PROVISIONING_PROFILE_SPECIFIER = Fastlane_dev;
+				PROVISIONING_PROFILE_SPECIFIER = TheLastProject_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,9 +512,13 @@
 			baseConfigurationReference = 4426970FA488C3F1999D0EB7 /* Pods-UnitTestExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tien Le (QG598U658S)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QG598U658S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UnitTestExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
