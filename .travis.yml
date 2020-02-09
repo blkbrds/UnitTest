@@ -1,8 +1,10 @@
-osx_image: xcode10.2
+osx_image: xcode11.3
 language: swift
 rvm:
   - 2.6.3
 cache:
+  directories:
+    - /home/travis/.rvm/
   - bundler
   - cocoapods
 before_install:

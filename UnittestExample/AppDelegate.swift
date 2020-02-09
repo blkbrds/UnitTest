@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-//https://firebase.google.com/docs/crashlytics/get-started?platform=ios&utm_source=fabric&utm_medium=inline_banner&utm_campaign=fabric_sunset&utm_content=kits_crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
